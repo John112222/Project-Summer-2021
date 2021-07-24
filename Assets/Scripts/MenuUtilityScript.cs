@@ -10,4 +10,8 @@ public class MenuUtilityScript : MonoBehaviour
     #endif
        Application.Quit();
    }
+   public static void LoadLevel(int buildindex){
+       UnityEngine.SceneManagement.SceneManager.LoadScene(buildindex);
+
+   }
 }
