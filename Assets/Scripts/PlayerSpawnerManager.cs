@@ -13,6 +13,8 @@ public class PlayerSpawnerManager : MonoBehaviourPunCallbacks
             Debug.LogError("Missing Player Prefab");
             return;
         }
-        PhotonNetwork.Instantiate(this.playerprefab.name,Vector3.zero,Quaternion.identity,0);
+        
+        GameObject Player=PhotonNetwork.Instantiate(this.playerprefab.name,Vector3.zero,Quaternion.identity,0);
+        Player.GetComponent<MeshRenderer>().material.color=Color.yellow;
     }
 }
