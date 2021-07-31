@@ -12,7 +12,8 @@ public class NetworkPlayerManager : MonoBehaviourPun
             Destroy(GetComponent<Rigidbody>());
             Destroy(GetComponent<FirstPersonController>());
             Destroy(GetComponent<CharacterController>());
-            Destroy(GetComponentInChildren<Camera>());
+            (GetComponentInChildren<Camera>())?.gameObject.SetActive(false);
+            Destroy(GetComponent<FPSControllerLPFP.FpsControllerLPFP>());
         }
     }
 }
