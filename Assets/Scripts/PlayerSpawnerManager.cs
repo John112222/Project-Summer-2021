@@ -15,6 +15,7 @@ public class PlayerSpawnerManager : MonoBehaviourPunCallbacks
         }
         
         GameObject Player=PhotonNetwork.Instantiate(this.playerprefab.name,Vector3.zero,Quaternion.identity,0);
-        Player.GetComponent<MeshRenderer>().material.color=Color.yellow;
+        Player.GetComponent<MeshRenderer>().material.color=Photon.Pun.Demo.Asteroids.AsteroidsGame.GetColor(photonView.Owner.ActorNumber);
+        Player.name=$"player:{photonView.Owner.ActorNumber}";
     }
 }
