@@ -10,7 +10,7 @@ public class NetworkPlayerInitilizaed : MonoBehaviourPun
 
 
     // Start is called before the first frame update
-    void initialization()
+    public void initialization()
     {
         if(photonView.IsMine){
             MainCamera.enabled=true;

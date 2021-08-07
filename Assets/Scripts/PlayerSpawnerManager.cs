@@ -16,6 +16,7 @@ public class PlayerSpawnerManager : MonoBehaviourPunCallbacks
                 GameObject player=PhotonNetwork.Instantiate(this.playerprefab.name,Vector3.zero,Quaternion.identity,0);
                 PhotonView pv =player.GetComponent<PhotonView>();
                 pv.TransferOwnership(P);
+                Debug.LogWarning(pv.Owner);
                 player.GetComponent<NetworkPlayerInitilizaed>().initialization();
             }
         }
