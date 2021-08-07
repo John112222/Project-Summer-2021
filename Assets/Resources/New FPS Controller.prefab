@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 8954553284416837958}
   m_Layer: 8
   m_Name: Gun Camera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -846,6 +846,7 @@ GameObject:
   - component: {fileID: 2695757530698392258}
   - component: {fileID: 8734232859193590884}
   - component: {fileID: 6114736381816326954}
+  - component: {fileID: 5831587658072831685}
   m_Layer: 8
   m_Name: New FPS Controller
   m_TagString: Untagged
@@ -1012,7 +1013,7 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 1
   observableSearch: 2
   ObservedComponents:
   - {fileID: 2695757530698392258}
@@ -1078,6 +1079,20 @@ MonoBehaviour:
     strafe: Vertical
     run: Fire3
     jump: Jump
+--- !u!114 &5831587658072831685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9085066350046273480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56622616d5590d48b70095e2433b05a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainCamera: {fileID: 9104658512821996006}
+  GunCamera: {fileID: 9104136811036600338}
 --- !u!1 &9085077189478542288
 GameObject:
   m_ObjectHideFlags: 0
