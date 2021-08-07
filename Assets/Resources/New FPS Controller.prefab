@@ -842,10 +842,10 @@ GameObject:
   - component: {fileID: 9138764743070999802}
   - component: {fileID: 9220081186842072192}
   - component: {fileID: 9166565058253873712}
-  - component: {fileID: 9189145636269095758}
   - component: {fileID: 8395134602997871700}
   - component: {fileID: 2695757530698392258}
   - component: {fileID: 8734232859193590884}
+  - component: {fileID: 6114736381816326954}
   m_Layer: 8
   m_Name: New FPS Controller
   m_TagString: Untagged
@@ -996,37 +996,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &9189145636269095758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9085066350046273480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9ebbf09afaa7a14fa049921e4516bf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arms: {fileID: 9088025388037360348}
-  armPosition: {x: 0, y: 0, z: 0}
-  walkingSound: {fileID: 8300000, guid: 6597a368cd74a924eaedb0171d5b28d3, type: 3}
-  runningSound: {fileID: 8300000, guid: 0c58744c3b6fdd844b8348066c3f703e, type: 3}
-  walkingSpeed: 5
-  runningSpeed: 9
-  movementSmoothness: 0.125
-  jumpForce: 35
-  mouseSensitivity: 7
-  rotationSmoothness: 0.05
-  minVerticalAngle: -90
-  maxVerticalAngle: 90
-  input:
-    rotateX: Mouse X
-    rotateY: Mouse Y
-    move: Horizontal
-    strafe: Vertical
-    run: Fire3
-    jump: Jump
 --- !u!114 &8395134602997871700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1078,6 +1047,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b8578238d573b49be7c09636b77d67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6114736381816326954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9085066350046273480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 695850b9f4c300f408fc611f83bf6e28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arms: {fileID: 9088025388037360348}
+  armPosition: {x: 0, y: 0, z: 0}
+  walkingSound: {fileID: 8300000, guid: 6597a368cd74a924eaedb0171d5b28d3, type: 3}
+  runningSound: {fileID: 8300000, guid: 0c58744c3b6fdd844b8348066c3f703e, type: 3}
+  walkingSpeed: 5
+  runningSpeed: 9
+  movementSmoothness: 0.125
+  jumpForce: 35
+  mouseSensitivity: 7
+  rotationSmoothness: 0.05
+  minVerticalAngle: -90
+  maxVerticalAngle: 90
+  input:
+    rotateX: Mouse X
+    rotateY: Mouse Y
+    move: Horizontal
+    strafe: Vertical
+    run: Fire3
+    jump: Jump
 --- !u!1 &9085077189478542288
 GameObject:
   m_ObjectHideFlags: 0
