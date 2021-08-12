@@ -8,32 +8,48 @@ public class PlayerSpawnerManager : MonoBehaviourPunCallbacks
 {
     public GameObject playerprefab;
     public GameObject Networkcopyprefab;
+    public static PlayerSpawnerManager instance;
+
+    public List<Transform> defenderSpawnPoints = new List<Transform>();
+    public List<Transform> escaperSpawnPoints = new List<Transform>();
     // Start is called before the first frame update
+
+    private void Awake() 
+    {
+        if(instance)
+        {
+            Destroy(this.gameObject);
+            return;
+        }    
+        DontDestroyOnLoad(this.gameObject);
+        instance = this;    
+    }
+
     void Start()
     {
-        if(PhotonNetwork.IsMasterClient){
-            foreach(Player P in PhotonNetwork.PlayerList){
-                GameObject player=PhotonNetwork.Instantiate(this.playerprefab.name,Vector3.zero,Quaternion.identity,0);
-                PhotonView pv =player.GetComponent<PhotonView>();
-                pv.TransferOwnership(P);
-                Debug.LogWarning(pv.Owner);
-                player.GetComponent<NetworkPlayerInitilizaed>().initialization();
-            }
-        }
-            return;
+        // if(PhotonNetwork.IsMasterClient){
+        //     foreach(Player P in PhotonNetwork.PlayerList){
+        //         GameObject player=PhotonNetwork.Instantiate(this.playerprefab.name,Vector3.zero,Quaternion.identity,0);
+        //         PhotonView pv =player.GetComponent<PhotonView>();
+        //         pv.TransferOwnership(P);
+        //         Debug.LogWarning(pv.Owner);
+        //         player.GetComponent<NetworkPlayerInitilizaed>().initialization();
+        //     }
+        // }
+        //     return;
 
 
-        if(!photonView.IsMine){
-            GameObject Model=PhotonNetwork.Instantiate(this.Networkcopyprefab.name,Vector3.zero,Quaternion.identity,0);
-            return;
-        }
-        if(playerprefab==null){
-            Debug.LogError("Missing Player Prefab");
-            return;
-        }
+        // if(!photonView.IsMine){
+        //     GameObject Model=PhotonNetwork.Instantiate(this.Networkcopyprefab.name,Vector3.zero,Quaternion.identity,0);
+        //     return;
+        // }
+        // if(playerprefab==null){
+        //     Debug.LogError("Missing Player Prefab");
+        //     return;
+        // }
         
-        GameObject Player=PhotonNetwork.Instantiate(this.playerprefab.name,Vector3.zero,Quaternion.identity,0);
-        Player.GetComponent<MeshRenderer>().material.color=Photon.Pun.Demo.Asteroids.AsteroidsGame.GetColor(photonView.Owner.ActorNumber);
-        Player.name=$"player:{photonView.Owner.ActorNumber}";
+        // GameObject Player=PhotonNetwork.Instantiate(this.playerprefab.name,Vector3.zero,Quaternion.identity,0);
+        // Player.GetComponent<MeshRenderer>().material.color=Photon.Pun.Demo.Asteroids.AsteroidsGame.GetColor(photonView.Owner.ActorNumber);
+        // Player.name=$"player:{photonView.Owner.ActorNumber}";
     }
 }

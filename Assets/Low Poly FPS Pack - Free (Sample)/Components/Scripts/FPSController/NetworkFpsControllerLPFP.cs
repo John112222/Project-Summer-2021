@@ -147,6 +147,7 @@ namespace FPSControllerLPFP
         private void Update()
         {
             if(!photonView.IsMine)return;
+            Debug.LogWarning(photonView.Owner);
 			arms.position = transform.position + transform.TransformVector(armPosition);
             Jump();
             PlayFootstepSounds();

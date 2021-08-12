@@ -8,17 +8,23 @@ public class NetworkPlayerInitilizaed : MonoBehaviourPun
     public Camera
     MainCamera,GunCamera;
 
+    public List<GameObject> ObjectsToRemove = new List<GameObject>();
+    public List<Component> ComponentsToRemove = new List<Component>();
 
-    // Start is called before the first frame update
-    public void initialization()
+
+    public void Start()
     {
-        if(photonView.IsMine){
-            MainCamera.enabled=true;
-            GunCamera.enabled=true;
-        
-        }else{
-            MainCamera.enabled=false;
-            GunCamera.enabled=false;  
+        if(!photonView.IsMine){
+            foreach(var obj in ObjectsToRemove)
+            {
+                Destroy(obj);
+            }
+            foreach(var comp in ComponentsToRemove)
+            {
+                Destroy(comp);
+            }
+            ObjectsToRemove.Clear();
+            ComponentsToRemove.Clear();
         }
     }
 
