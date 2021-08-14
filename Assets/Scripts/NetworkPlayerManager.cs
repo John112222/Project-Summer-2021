@@ -15,15 +15,16 @@ public class NetworkPlayerManager : MonoBehaviourPun
 
     void Start()
     {
-        if(photonView.IsMine){
-            CreatePlayerController(true);
+         object TeamSelection;
+        if(photonView.IsMine&&photonView.Owner.CustomProperties.TryGetValue(GameConfigs.TeamSelection,out TeamSelection)){
+            CreatePlayerController((bool)TeamSelection);
         }
     }
 
     private void CreatePlayerController(bool isDefender = true)
     {
-        // TODO: Check whether you are escaper or defender
         GameObject player = PhotonNetwork.Instantiate(playerPrefab.name, Vector3.zero, Quaternion.identity);
+        player.GetComponentInChildren<MeshRenderer>().material.color=isDefender?Color.blue:Color.red;
     }
 
 }
