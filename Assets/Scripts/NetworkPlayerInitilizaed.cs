@@ -5,9 +5,6 @@ using Photon.Pun;
 
 public class NetworkPlayerInitilizaed : MonoBehaviourPun
 {
-    public Camera
-    MainCamera,GunCamera;
-
     public List<GameObject> ObjectsToRemove = new List<GameObject>();
     public List<Component> ComponentsToRemove = new List<Component>();
 
