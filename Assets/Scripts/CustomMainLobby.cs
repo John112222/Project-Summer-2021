@@ -121,20 +121,20 @@ using Photon.Pun;
                 entry.transform.localScale = Vector3.one;
                 entry.GetComponent<Temp>().Initialize(p.ActorNumber, p.NickName);
 
-                object isPlayerReady;
-                if (p.CustomProperties.TryGetValue(GameConfigs.Temp, out isPlayerReady))
+                object PlayerTeam;
+                if (p.CustomProperties.TryGetValue(GameConfigs.TeamSelection, out PlayerTeam))
                 {
-                    entry.GetComponent<Temp>().SetPlayerReady((bool) isPlayerReady);
+                    entry.GetComponent<Temp>().SetPlayerTeam((bool) PlayerTeam);
                 }
 
                 playerListEntries.Add(p.ActorNumber, entry);
             }
 
-            StartGameButton.gameObject.SetActive(CheckPlayersReady());
+            StartGameButton.gameObject.SetActive(CheckBalanceTeam());
 
             Hashtable props = new Hashtable
             {
-                {GameConfigs.Temp, false}
+                {GameConfigs.TeamSelection, false}
             };
             PhotonNetwork.LocalPlayer.SetCustomProperties(props);
         }
@@ -161,7 +161,7 @@ using Photon.Pun;
 
             playerListEntries.Add(newPlayer.ActorNumber, entry);
 
-            StartGameButton.gameObject.SetActive(CheckPlayersReady());
+            StartGameButton.gameObject.SetActive(CheckBalanceTeam());
         }
 
         public override void OnPlayerLeftRoom(Player otherPlayer)
@@ -169,14 +169,14 @@ using Photon.Pun;
             Destroy(playerListEntries[otherPlayer.ActorNumber].gameObject);
             playerListEntries.Remove(otherPlayer.ActorNumber);
 
-            StartGameButton.gameObject.SetActive(CheckPlayersReady());
+            StartGameButton.gameObject.SetActive(CheckBalanceTeam());
         }
 
         public override void OnMasterClientSwitched(Player newMasterClient)
         {
             if (PhotonNetwork.LocalPlayer.ActorNumber == newMasterClient.ActorNumber)
             {
-                StartGameButton.gameObject.SetActive(CheckPlayersReady());
+                StartGameButton.gameObject.SetActive(CheckBalanceTeam());
             }
         }
 
@@ -193,11 +193,11 @@ using Photon.Pun;
                 object isPlayerReady;
                 if (changedProps.TryGetValue(GameConfigs.Temp, out isPlayerReady))
                 {
-                    entry.GetComponent<Temp>().SetPlayerReady((bool) isPlayerReady);
+                    entry.GetComponent<Temp>().SetPlayerTeam((bool) isPlayerReady);
                 }
             }
 
-            StartGameButton.gameObject.SetActive(CheckPlayersReady());
+            StartGameButton.gameObject.SetActive(CheckBalanceTeam());
         }
 
         #endregion
@@ -275,21 +275,25 @@ using Photon.Pun;
 
         #endregion
 
-        private bool CheckPlayersReady()
+        private bool CheckBalanceTeam()
         {
             if (!PhotonNetwork.IsMasterClient)
             {
                 return false;
             }
+            int numberOfDefenders=0;
+            int numberOfEscapers=0;
 
             foreach (Player p in PhotonNetwork.PlayerList)
             {
-                object isPlayerReady;
-                if (p.CustomProperties.TryGetValue(GameConfigs.Temp, out isPlayerReady))
+                object IsPlayerDefender;
+                if (p.CustomProperties.TryGetValue(GameConfigs.TeamSelection, out IsPlayerDefender))
                 {
-                    if (!(bool) isPlayerReady)
+                    if ((bool) IsPlayerDefender)
                     {
-                        return false;
+                        numberOfDefenders++;
+                    }else{
+                        numberOfEscapers++;
                     }
                 }
                 else
@@ -298,7 +302,7 @@ using Photon.Pun;
                 }
             }
 
-            return true;
+            return numberOfDefenders==numberOfEscapers&&numberOfDefenders>0;
         }
         
         private void ClearRoomListView()
@@ -313,7 +317,7 @@ using Photon.Pun;
 
         public void LocalPlayerPropertiesUpdated()
         {
-            StartGameButton.gameObject.SetActive(CheckPlayersReady());
+            StartGameButton.gameObject.SetActive(CheckBalanceTeam());
         }
 
         private void SetActivePanel(string activePanel)

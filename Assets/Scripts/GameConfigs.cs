@@ -7,6 +7,7 @@ public static class GameConfigs
    public const int MININMUM_PLAYERS=2;
    public const int MAXIMUM_PLAYERS=4;
    public const string Temp="";
+   public const string TeamSelection="team";
    public const string GameLevelName="Game Level";
 
    public static Color GetColor(int colorChoice)
