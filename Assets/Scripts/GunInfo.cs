@@ -5,7 +5,6 @@ public class GunInfo : ItemInfo
 {
     [Header("Gun Info")]
     public GameObject gunPrefab;
-    public Transform firePoint;
 
     [Header("Gun Properties")]
     public int ammoAmount;
