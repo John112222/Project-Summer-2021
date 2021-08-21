@@ -20,6 +20,7 @@ public class MazeSpawner : MonoBehaviour {
 	public int RandomSeed = 12345;
 	public int cellrandom = 5;
 	public GameObject Floor = null;
+	public GameObject roof = null;
 	public GameObject Wall = null;
 	public GameObject Pillar = null;
 	public int Rows = 5;
@@ -103,7 +104,7 @@ public class MazeSpawner : MonoBehaviour {
 				GameObject tmp;
 				tmp = Instantiate(Floor, new Vector3(x, 0, z), Quaternion.Euler(0, 0, 0)) as GameObject;
 				tmp.transform.parent = transform;
-				tmp = Instantiate(Floor, new Vector3(x, roofheight, z), Quaternion.Euler(0, 0, 0)) as GameObject;
+				tmp = Instantiate(roof, new Vector3(x, roofheight, z), Quaternion.Euler(0, 0, 0)) as GameObject;
 				tmp.transform.parent = transform;
 				if(cell.IsGoal||cell.randomint>cellrandom){
 					continue;
