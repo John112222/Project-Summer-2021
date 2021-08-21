@@ -35,6 +35,9 @@ public abstract class BasicMazeGenerator {
 
 	public MazeCell GetMazeCell(int row, int column){
 		if (row >= 0 && column >= 0 && row < mMazeRows && column < mMazeColumns) {
+			if(mMaze[row,column].randomint==0){
+				mMaze[row,column].randomint=Random.Range(1,10);
+			}
 			return mMaze[row,column];
 		}else{
 			Debug.Log(row+" "+column);

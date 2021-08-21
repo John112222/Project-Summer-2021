@@ -18,6 +18,7 @@ public class MazeSpawner : MonoBehaviour {
 	public MazeGenerationAlgorithm Algorithm = MazeGenerationAlgorithm.PureRecursive;
 	public bool FullRandom = false;
 	public int RandomSeed = 12345;
+	public int cellrandom = 5;
 	public GameObject Floor = null;
 	public GameObject Wall = null;
 	public GameObject Pillar = null;
@@ -29,6 +30,7 @@ public class MazeSpawner : MonoBehaviour {
 
 	public float CellWidth = 5;
 	public float CellHeight = 5;
+	public float roofheight = 3;
 	public bool AddGaps = true;
 	public GameObject GoalPrefab = null;
 
@@ -101,7 +103,9 @@ public class MazeSpawner : MonoBehaviour {
 				GameObject tmp;
 				tmp = Instantiate(Floor, new Vector3(x, 0, z), Quaternion.Euler(0, 0, 0)) as GameObject;
 				tmp.transform.parent = transform;
-				if(cell.IsGoal){
+				tmp = Instantiate(Floor, new Vector3(x, roofheight, z), Quaternion.Euler(0, 0, 0)) as GameObject;
+				tmp.transform.parent = transform;
+				if(cell.IsGoal||cell.randomint>cellrandom){
 					continue;
 				}
 				if((row<=CenterSizeX||row>=Rows-CenterSizeX)&&column<=Columns/2+CenterSizeZ/2&&column>=Columns/2-CenterSizeZ/2){
