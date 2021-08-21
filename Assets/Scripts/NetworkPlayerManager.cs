@@ -23,6 +23,7 @@ public class NetworkPlayerManager : MonoBehaviourPun
     private void CreatePlayerController(bool isDefender = true)
     {
         GameObject player = PhotonNetwork.Instantiate(playerPrefab.name, Vector3.zero, Quaternion.identity);
+        Debug.Log($"{player} is Defender? {isDefender}");
         player.GetComponentInChildren<MeshRenderer>().material.color=isDefender?Color.blue:Color.red;
     }
 
