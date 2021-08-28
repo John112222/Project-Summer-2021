@@ -48,12 +48,21 @@ public class RoomManager : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate(playerManagerPrefab.name, Vector3.zero, Quaternion.identity);
         }
     }
+    public override void OnLeftRoom(){
+        base.OnLeftRoom();
+        PhotonNetwork.Destroy(this.gameObject);
+        PhotonNetwork.LoadLevel(lobbyScene);
 
+    }
     private void OnLobbySceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if(scene.name == lobbyScene)
         {
-            
+            foreach(var Room in FindObjectsOfType<RoomManager>()){
+                if(Room != RoomManager.instance){
+                    PhotonNetwork.Destroy(Room.gameObject);
+                }
+            }
         }
     }
 

@@ -848,6 +848,7 @@ GameObject:
   - component: {fileID: 5831587658072831685}
   - component: {fileID: 1218975424417604425}
   - component: {fileID: 4631160853540078311}
+  - component: {fileID: 2890336596721429674}
   m_Layer: 0
   m_Name: New FPS Controller
   m_TagString: Untagged
@@ -1106,6 +1107,18 @@ MonoBehaviour:
   OnPlayerDeath:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2890336596721429674}
+        m_TargetAssemblyTypeName: DeathCameraSpawner, Assembly-CSharp
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1218975424417604425}
         m_TargetAssemblyTypeName: NetworkedHealth, Assembly-CSharp
         m_MethodName: NetworkDeath
@@ -1133,6 +1146,19 @@ MonoBehaviour:
   playerCamera: {fileID: 9104658512821996006}
   damage: 10
   shootKey: 323
+--- !u!114 &2890336596721429674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9085066350046273480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b1277711d9357e41ad598d491d73410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cameraprefab: {fileID: 6742165232918645349, guid: 8c9795942cc8ea547b0ca554a3458fa8, type: 3}
 --- !u!1 &9085077189478542288
 GameObject:
   m_ObjectHideFlags: 0
