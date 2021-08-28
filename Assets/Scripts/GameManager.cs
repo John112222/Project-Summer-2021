@@ -5,13 +5,44 @@ using TMPro;
 using Photon.Pun;
 public class GameManager : MonoBehaviourPunCallbacks
 {
+  public static GameManager main = null;
     public float timer =10;
     public TextMeshProUGUI timertext;
+    public List<int> defenderIdList;
+    public List<int> escaperIdList;
+
+    private void Awake() {
+      if(main == null)
+      {
+        main = this;
+      }  
+    }
+
     void Start()
     {
       if(PhotonNetwork.IsMasterClient){
           StartCoroutine(Timer());
       }
+    }
+
+    public static void RemovePlayer(int viewID)
+    {
+        main.photonView.RPC("RPC_RemovePlayer", RpcTarget.All, viewID);
+    }
+
+    [PunRPC]
+    private void RPC_RemovePlayer(int viewID)
+    {
+      if(main.defenderIdList.Contains(viewID))
+      {
+        main.defenderIdList.Remove(viewID);
+      }
+      if(main.escaperIdList.Contains(viewID))
+      {
+        main.escaperIdList.Remove(viewID);
+      }
+
+      Debug.Log($"Defender Remaining: {main.defenderIdList.Count}\nEscaper Remaining: {main.escaperIdList.Count}");
     }
 
   private IEnumerator Timer(){

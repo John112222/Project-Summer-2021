@@ -23,7 +23,15 @@ public class NetworkPlayerManager : MonoBehaviourPun
     private void CreatePlayerController(bool isDefender = true)
     {
         GameObject player = PhotonNetwork.Instantiate(playerPrefab.name, PlayerSpawnerManager.Randomspawnpoints(isDefender).position, Quaternion.identity);
-        player.GetComponentInChildren<MeshRenderer>().material.color=isDefender?Color.blue:Color.red;
+        // player.GetComponentInChildren<MeshRenderer>().material.color=isDefender ? Color.blue : Color.red;
+        if(isDefender)
+        {
+            GameManager.main.defenderIdList.Add(photonView.ViewID);
+        }
+        else
+        {
+            GameManager.main.escaperIdList.Add(photonView.ViewID);
+        }
     }
 
 }

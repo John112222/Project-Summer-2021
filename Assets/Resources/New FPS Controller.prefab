@@ -847,7 +847,8 @@ GameObject:
   - component: {fileID: 2695757530698392258}
   - component: {fileID: 6114736381816326954}
   - component: {fileID: 5831587658072831685}
-  - component: {fileID: 2004480411543890688}
+  - component: {fileID: 1218975424417604425}
+  - component: {fileID: 4631160853540078311}
   m_Layer: 0
   m_Name: New FPS Controller
   m_TagString: Untagged
@@ -1089,7 +1090,7 @@ MonoBehaviour:
   - {fileID: 6114736381816326954}
   - {fileID: 9189703817940701722}
   - {fileID: 9138764743070999802}
---- !u!114 &2004480411543890688
+--- !u!114 &1218975424417604425
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1098,14 +1099,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 9085066350046273480}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3ec31129203645f0b2aa928a78cfb9f, type: 3}
+  m_Script: {fileID: 11500000, guid: 92280fc809e5d410c980a7f27df5a363, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  equipmentHolderParent: {fileID: 0}
-  items: []
-  nextItemKey: 9
-  itemObjects: []
-  currentItemIndex: 0
+  maxHealth: 100
+  currentHealth: 0
+  OnPlayerDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1218975424417604425}
+        m_TargetAssemblyTypeName: NetworkedHealth, Assembly-CSharp
+        m_MethodName: NetworkDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4631160853540078311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9085066350046273480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57f1e9312e8e54fda8c0295c6de65675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 9104658512821996006}
+  damage: 10
+  shootKey: 323
 --- !u!1 &9085077189478542288
 GameObject:
   m_ObjectHideFlags: 0
@@ -12793,7 +12821,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9011112255131777352
 RectTransform:
   m_ObjectHideFlags: 0

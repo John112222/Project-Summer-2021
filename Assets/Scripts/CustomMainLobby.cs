@@ -119,12 +119,12 @@ using Photon.Pun;
                 GameObject entry = Instantiate(PlayerListEntryPrefab);
                 entry.transform.SetParent(InsideRoomPanel.transform);
                 entry.transform.localScale = Vector3.one;
-                entry.GetComponent<CustomEntryUI>().Initialize(p.ActorNumber, p.NickName);
+                entry.GetComponent<CustomPlayerEntry>().Initialize(p.ActorNumber, p.NickName);
 
                 object PlayerTeam;
                 if (p.CustomProperties.TryGetValue(GameConfigs.TeamSelection, out PlayerTeam))
                 {
-                    entry.GetComponent<CustomEntryUI>().SetPlayerTeam((bool) PlayerTeam);
+                    entry.GetComponent<CustomPlayerEntry>().SetPlayerTeam((bool) PlayerTeam);
                 }
 
                 playerListEntries.Add(p.ActorNumber, entry);
@@ -157,7 +157,7 @@ using Photon.Pun;
             GameObject entry = Instantiate(PlayerListEntryPrefab);
             entry.transform.SetParent(InsideRoomPanel.transform);
             entry.transform.localScale = Vector3.one;
-            entry.GetComponent<CustomEntryUI>().Initialize(newPlayer.ActorNumber, newPlayer.NickName);
+            entry.GetComponent<CustomPlayerEntry>().Initialize(newPlayer.ActorNumber, newPlayer.NickName);
 
             playerListEntries.Add(newPlayer.ActorNumber, entry);
 
@@ -193,7 +193,7 @@ using Photon.Pun;
                 object isPlayerReady;
                 if (changedProps.TryGetValue(GameConfigs.Temp, out isPlayerReady))
                 {
-                    entry.GetComponent<CustomEntryUI>().SetPlayerTeam((bool) isPlayerReady);
+                    entry.GetComponent<CustomPlayerEntry>().SetPlayerTeam((bool) isPlayerReady);
                 }
             }
 

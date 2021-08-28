@@ -5,7 +5,7 @@ using Photon.Pun.UtilityScripts;
 using Photon.Pun;
 using ExitGames.Client.Photon;
 
-public class CustomPlayerUI : MonoBehaviour
+public class CustomPlayerEntry : MonoBehaviour
 {
     [Header("UI References")]
         public Text PlayerNameText;
