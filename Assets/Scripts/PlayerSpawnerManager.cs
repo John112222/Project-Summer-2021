@@ -24,6 +24,13 @@ public class PlayerSpawnerManager : MonoBehaviourPunCallbacks
         DontDestroyOnLoad(this.gameObject);
         instance = this;    
     }
+    public static Transform Randomspawnpoints(bool isDefender){
+        if(isDefender){
+            return instance.defenderSpawnPoints[0];
+        }else{
+            return instance.escaperSpawnPoints[0];
+        }
+    }
 
     void Start()
     {

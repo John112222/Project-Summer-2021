@@ -18,7 +18,9 @@ public class MazeSpawner : MonoBehaviour {
 	public MazeGenerationAlgorithm Algorithm = MazeGenerationAlgorithm.PureRecursive;
 	public bool FullRandom = false;
 	public int RandomSeed = 12345;
+	public int cellrandom = 5;
 	public GameObject Floor = null;
+	public GameObject roof = null;
 	public GameObject Wall = null;
 	public GameObject Pillar = null;
 	public int Rows = 5;
@@ -29,6 +31,7 @@ public class MazeSpawner : MonoBehaviour {
 
 	public float CellWidth = 5;
 	public float CellHeight = 5;
+	public float roofheight = 3;
 	public bool AddGaps = true;
 	public GameObject GoalPrefab = null;
 
@@ -101,6 +104,14 @@ public class MazeSpawner : MonoBehaviour {
 				GameObject tmp;
 				tmp = Instantiate(Floor, new Vector3(x, 0, z), Quaternion.Euler(0, 0, 0)) as GameObject;
 				tmp.transform.parent = transform;
+				tmp = Instantiate(roof, new Vector3(x, roofheight, z), Quaternion.Euler(0, 0, 0)) as GameObject;
+				tmp.transform.parent = transform;
+				if(cell.IsGoal||cell.randomint>cellrandom){
+					continue;
+				}
+				if((row<=CenterSizeX||row>=Rows-CenterSizeX)&&column<=Columns/2+CenterSizeZ/2&&column>=Columns/2-CenterSizeZ/2){
+					continue;
+				}
 				if (cell.WallRight)
 				{
 					tmp = Instantiate(Wall, new Vector3(x + CellWidth / 2, 0, z) + Wall.transform.position, Quaternion.Euler(0, 90, 0)) as GameObject;// right
@@ -121,11 +132,11 @@ public class MazeSpawner : MonoBehaviour {
 					tmp = Instantiate(Wall, new Vector3(x, 0, z - CellHeight / 2) + Wall.transform.position, Quaternion.Euler(0, 180, 0)) as GameObject;// back
 					tmp.transform.parent = transform;
 				}
-				if (cell.IsGoal && GoalPrefab != null)
-				{
-					tmp = Instantiate(GoalPrefab, new Vector3(x, 1, z), Quaternion.Euler(0, 0, 0)) as GameObject;
-					tmp.transform.parent = transform;
-				}
+				// //if (cell.IsGoal )
+				// {
+				// //	tmp = Instantiate(GoalPrefab, new Vector3(x, 1, z), Quaternion.Euler(0, 0, 0)) as GameObject;
+				// //	tmp.transform.parent = transform;
+				// //}
                 if (slowGenerateMaze)
                 {
                     await Task.Delay(waitTime);
@@ -138,6 +149,9 @@ public class MazeSpawner : MonoBehaviour {
 			{
 				for (int column = 0; column < Columns + 1; column++)
 				{
+				if((row<=CenterSizeX||row>=Rows-CenterSizeX)&&column<=Columns/2+CenterSizeZ/2&&column>=Columns/2-CenterSizeZ/2){
+					continue;
+				}
 					float x = column * (CellWidth + (AddGaps ? .2f : 0));
 					float z = row * (CellHeight + (AddGaps ? .2f : 0));
 					GameObject tmp = Instantiate(Pillar, new Vector3(x - CellWidth / 2, 0, z - CellHeight / 2), Quaternion.identity) as GameObject;
