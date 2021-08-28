@@ -198,6 +198,7 @@ using Photon.Pun;
             }
 
             StartGameButton.gameObject.SetActive(CheckBalanceTeam());
+            Debug.Log($"There was a change in property for {targetPlayer} with {changedProps}");
         }
 
         #endregion
