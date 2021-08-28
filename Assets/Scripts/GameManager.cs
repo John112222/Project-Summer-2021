@@ -43,8 +43,22 @@ public class GameManager : MonoBehaviourPunCallbacks
       }
 
       Debug.Log($"Defender Remaining: {main.defenderIdList.Count}\nEscaper Remaining: {main.escaperIdList.Count}");
+      if(PhotonNetwork.IsMasterClient){
+        checkwinners();
+      }
     }
-
+      public void checkwinners(){
+        if(main.defenderIdList.Count==0){
+           this.photonView.RPC("updatetext",RpcTarget.All,"EscapersWin");
+          timertext.text="EscapersWin";
+          StopAllCoroutines();
+        }
+        if(main.escaperIdList.Count==0){
+           this.photonView.RPC("updatetext",RpcTarget.All,"DefendersWin");
+          timertext.text="DefendersWin";
+          StopAllCoroutines();
+        }
+      }
   private IEnumerator Timer(){
       this.photonView.RPC("updatetext",RpcTarget.All,"gamerunning");
       timertext.text="Gamerunning";
