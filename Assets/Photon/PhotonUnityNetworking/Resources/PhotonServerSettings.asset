@@ -41,6 +41,9 @@ MonoBehaviour:
   - updatetext
   - RPC_TakeDamage
   - RPC_RemovePlayer
+  - StopGame
+  - RPC_AddPlayer
+  - RPC_UpdatePlayerProperties
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

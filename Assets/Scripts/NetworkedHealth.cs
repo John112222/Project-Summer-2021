@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class NetworkedHealth : MonoBehaviourPun
 {
     [SerializeField] float maxHealth = 100;
     [SerializeField] float currentHealth;
+    [SerializeField] Image healthBar;
 
     public UnityEvent OnPlayerDeath;
     
@@ -28,6 +30,7 @@ public class NetworkedHealth : MonoBehaviourPun
 
 
         currentHealth -= damage;
+        healthBar.fillAmount = currentHealth/maxHealth;
         if(currentHealth <= 0)
         {
             OnPlayerDeath?.Invoke();

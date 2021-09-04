@@ -126,6 +126,10 @@ using Photon.Pun;
                 {
                     entry.GetComponent<CustomPlayerEntry>().SetPlayerTeam((bool) PlayerTeam);
                 }
+                else
+                {
+                    entry.GetComponent<CustomPlayerEntry>().SetPlayerTeam(null);
+                }
 
                 playerListEntries.Add(p.ActorNumber, entry);
             }
@@ -134,7 +138,7 @@ using Photon.Pun;
 
             Hashtable props = new Hashtable
             {
-                {GameConfigs.TeamSelection, false}
+                {GameConfigs.TeamSelection, null}
             };
             PhotonNetwork.LocalPlayer.SetCustomProperties(props);
         }
@@ -195,10 +199,15 @@ using Photon.Pun;
                 {
                     entry.GetComponent<CustomPlayerEntry>().SetPlayerTeam((bool) isPlayerReady);
                 }
+                else
+                {
+                    entry.GetComponent<CustomPlayerEntry>().SetPlayerTeam(null);
+                }
             }
 
             StartGameButton.gameObject.SetActive(CheckBalanceTeam());
-            Debug.Log($"There was a change in property for {targetPlayer} with {changedProps}");
+            Debug.LogError($"Players Dictionary: {playerListEntries.ToStringFull()}");
+            Debug.LogError($"There was a change in property for Player {targetPlayer.ActorNumber} with {changedProps.ToStringFull()}");
         }
 
         #endregion

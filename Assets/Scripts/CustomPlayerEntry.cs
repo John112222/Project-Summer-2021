@@ -81,10 +81,13 @@ public class CustomPlayerEntry : MonoBehaviour
         PlayerNameText.text=nickname;
     }
 
-    public void SetPlayerTeam(bool IsDefender)
+    public void SetPlayerTeam(bool? MaybeIsDefender)
     
     {
             PlayerTeamImage.enabled=true;
+        if(!MaybeIsDefender.HasValue) return;
+        
+        bool IsDefender = MaybeIsDefender.Value;
         if(IsDefender){
             PlayerTeamImage.color=Color.blue;
         }else{
