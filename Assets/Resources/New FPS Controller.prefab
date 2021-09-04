@@ -13887,8 +13887,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9085777787324100168}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 019ac360c1284de428ede7fdae6e3d9b, type: 3}
-  m_Controller: {fileID: 9100000, guid: 85246055224635041b43a7141d91d121, type: 2}
+  m_Avatar: {fileID: 9000000, guid: 56ec0b9a5b8762642811ea26a5242e04, type: 3}
+  m_Controller: {fileID: 9100000, guid: 4244e206520965240810b2de53faa670, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -14164,44 +14164,123 @@ MonoBehaviour:
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
   m_SynchronizeParameters:
-  - Type: 9
-    SynchronizeType: 1
-    Name: Shoot
-  - Type: 9
-    SynchronizeType: 1
-    Name: Inspect
-  - Type: 4
-    SynchronizeType: 1
-    Name: Holster
-  - Type: 4
-    SynchronizeType: 1
-    Name: Run
-  - Type: 4
-    SynchronizeType: 1
-    Name: Aim
-  - Type: 4
-    SynchronizeType: 1
-    Name: Walk
-  - Type: 4
-    SynchronizeType: 1
-    Name: Aim Scope 1
-  - Type: 4
-    SynchronizeType: 1
-    Name: Aim Scope 2
-  - Type: 4
-    SynchronizeType: 1
-    Name: Aim Scope 3
-  - Type: 4
-    SynchronizeType: 1
-    Name: Aim Scope 4
-  - Type: 4
-    SynchronizeType: 1
-    Name: Out Of Ammo Slider
+  - Type: 3
+    SynchronizeType: 0
+    Name: legs
+  - Type: 1
+    SynchronizeType: 0
+    Name: legs_speed
+  - Type: 1
+    SynchronizeType: 0
+    Name: Power_bolt
+  - Type: 3
+    SynchronizeType: 0
+    Name: assault57
+  - Type: 1
+    SynchronizeType: 0
+    Name: weapon_speed
+  - Type: 3
+    SynchronizeType: 0
+    Name: flamethrower
+  - Type: 3
+    SynchronizeType: 0
+    Name: rocket_launcher
+  - Type: 3
+    SynchronizeType: 0
+    Name: grenade_launcher
+  - Type: 3
+    SynchronizeType: 0
+    Name: auge
+  - Type: 3
+    SynchronizeType: 0
+    Name: blast_set
+  - Type: 3
+    SynchronizeType: 0
+    Name: buzzsub
+  - Type: 3
+    SynchronizeType: 0
+    Name: clustershotgun
+  - Type: 3
+    SynchronizeType: 0
+    Name: clustersub
+  - Type: 3
+    SynchronizeType: 0
+    Name: crowbar
+  - Type: 3
+    SynchronizeType: 0
+    Name: axe
+  - Type: 3
+    SynchronizeType: 0
+    Name: grenade
+  - Type: 3
+    SynchronizeType: 0
+    Name: hunter_rifle
+  - Type: 3
+    SynchronizeType: 0
+    Name: lock
+  - Type: 3
+    SynchronizeType: 0
+    Name: machine_gun
+  - Type: 3
+    SynchronizeType: 0
+    Name: mkb16
+  - Type: 3
+    SynchronizeType: 0
+    Name: nsp
+  - Type: 3
+    SynchronizeType: 0
+    Name: old_pistol
+  - Type: 3
+    SynchronizeType: 0
+    Name: pistol9
+  - Type: 3
+    SynchronizeType: 0
+    Name: pumpgun_a
+  - Type: 3
+    SynchronizeType: 0
+    Name: revolver
+  - Type: 3
+    SynchronizeType: 0
+    Name: rp9
+  - Type: 3
+    SynchronizeType: 0
+    Name: russian_sniper
+  - Type: 3
+    SynchronizeType: 0
+    Name: sce5
+  - Type: 3
+    SynchronizeType: 0
+    Name: scorp6
+  - Type: 3
+    SynchronizeType: 0
+    Name: shotgun3
+  - Type: 3
+    SynchronizeType: 0
+    Name: streetsub
+  - Type: 3
+    SynchronizeType: 0
+    Name: sturmgewehr46
+  - Type: 3
+    SynchronizeType: 0
+    Name: submachine5
+  - Type: 3
+    SynchronizeType: 0
+    Name: tarusk
+  - Type: 3
+    SynchronizeType: 0
+    Name: quad
+  - Type: 1
+    SynchronizeType: 0
+    Name: steer_speed
   m_SynchronizeLayers:
   - SynchronizeType: 1
     LayerIndex: 0
   - SynchronizeType: 1
     LayerIndex: 1
+  - SynchronizeType: 0
+    LayerIndex: 2
+  - SynchronizeType: 0
+    LayerIndex: 3
 --- !u!1 &9085785912092072428
 GameObject:
   m_ObjectHideFlags: 0

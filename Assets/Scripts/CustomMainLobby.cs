@@ -195,7 +195,7 @@ using Photon.Pun;
             if (playerListEntries.TryGetValue(targetPlayer.ActorNumber, out entry))
             {
                 object isPlayerReady;
-                if (changedProps.TryGetValue(GameConfigs.Temp, out isPlayerReady))
+                if (changedProps.TryGetValue(GameConfigs.TeamSelection, out isPlayerReady))
                 {
                     entry.GetComponent<CustomPlayerEntry>().SetPlayerTeam((bool) isPlayerReady);
                 }
@@ -203,6 +203,8 @@ using Photon.Pun;
                 {
                     entry.GetComponent<CustomPlayerEntry>().SetPlayerTeam(null);
                 }
+            Debug.LogError($"Changing {entry} to {isPlayerReady}");
+
             }
 
             StartGameButton.gameObject.SetActive(CheckBalanceTeam());

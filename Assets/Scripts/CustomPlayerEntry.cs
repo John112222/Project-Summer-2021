@@ -40,7 +40,7 @@ public class CustomPlayerEntry : MonoBehaviour
                 EscaperButton.gameObject.SetActive(false);
                 return;
             }
-            Hashtable initialProps = new Hashtable() {{GameConfigs.TeamSelection, IsDefender}};
+            Hashtable initialProps = new Hashtable() {{GameConfigs.TeamSelection, null}};
                 PhotonNetwork.LocalPlayer.SetCustomProperties(initialProps);
                 PhotonNetwork.LocalPlayer.SetScore(0);
 
