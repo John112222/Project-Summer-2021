@@ -203,13 +203,13 @@ using Photon.Pun;
                 {
                     entry.GetComponent<CustomPlayerEntry>().SetPlayerTeam(null);
                 }
-            Debug.LogError($"Changing {entry} to {isPlayerReady}");
+            // Debug.LogError($"Changing {entry} to {isPlayerReady}");
 
             }
 
             StartGameButton.gameObject.SetActive(CheckBalanceTeam());
-            Debug.LogError($"Players Dictionary: {playerListEntries.ToStringFull()}");
-            Debug.LogError($"There was a change in property for Player {targetPlayer.ActorNumber} with {changedProps.ToStringFull()}");
+            // Debug.LogError($"Players Dictionary: {playerListEntries.ToStringFull()}");
+            // Debug.LogError($"There was a change in property for Player {targetPlayer.ActorNumber} with {changedProps.ToStringFull()}");
         }
 
         #endregion

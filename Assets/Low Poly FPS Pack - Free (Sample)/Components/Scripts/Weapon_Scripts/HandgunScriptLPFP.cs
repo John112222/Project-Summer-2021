@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 // ----- Low Poly FPS Pack Free Version -----
 public class HandgunScriptLPFP : MonoBehaviour {
@@ -155,6 +156,8 @@ public class HandgunScriptLPFP : MonoBehaviour {
 	public soundClips SoundClips;
 
 	private bool soundHasPlayed = false;
+
+	public UnityEvent OnShoot = new UnityEvent();
 
 	private void Awake () 
 	{
@@ -381,6 +384,7 @@ public class HandgunScriptLPFP : MonoBehaviour {
 					}
 				}
 			}
+			OnShoot?.Invoke();
 				
 			//Spawn bullet at bullet spawnpoint
 			var bullet = (Transform)Instantiate (
