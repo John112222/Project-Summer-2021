@@ -79,6 +79,12 @@ public class GameManager : MonoBehaviourPunCallbacks
         checkwinners();
       }
     }
+    public void EscapersWin(){
+      this.photonView.RPC("updatetext",RpcTarget.All,"EscapersWin");
+          timertext.text="EscapersWin";
+          this.photonView.RPC("StopGame",RpcTarget.All);
+          StopAllCoroutines();
+    }
       public void checkwinners(){
         if(main.defenderIdList.Count==0){
            this.photonView.RPC("updatetext",RpcTarget.All,"EscapersWin");

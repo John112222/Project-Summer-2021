@@ -44,6 +44,7 @@ MonoBehaviour:
   - StopGame
   - RPC_AddPlayer
   - RPC_UpdatePlayerProperties
+  - RPC_Escapers_Win
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

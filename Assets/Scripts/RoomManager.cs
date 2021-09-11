@@ -15,7 +15,9 @@ public class RoomManager : MonoBehaviourPunCallbacks
     {
         return instance != null;
     }
-
+        override public void OnLeftLobby(){
+        SceneManager.LoadScene(lobbyScene);
+     }
     private void Awake() 
     {
         if(instance)
@@ -50,8 +52,8 @@ public class RoomManager : MonoBehaviourPunCallbacks
     }
     public override void OnLeftRoom(){
         base.OnLeftRoom();
-        PhotonNetwork.Destroy(this.gameObject);
-        PhotonNetwork.LoadLevel(lobbyScene);
+       // PhotonNetwork.Destroy(this.gameObject);
+        //PhotonNetwork.LoadLevel(lobbyScene);
 
     }
     private void OnLobbySceneLoaded(Scene scene, LoadSceneMode mode)
