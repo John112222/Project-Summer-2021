@@ -760,7 +760,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8413902984147738283}
-  - component: {fileID: 2616081771913283124}
   - component: {fileID: 1969219394662075292}
   - component: {fileID: 8231284664835291167}
   - component: {fileID: 2836038350796760774}
@@ -788,110 +787,6 @@ Transform:
   m_Father: {fileID: 9079317921835367470}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2616081771913283124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 286800174980250349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1120563af6de37a488d6c0b06dc17e2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FPS_camera: {fileID: 6291681054705479242}
-  aim_point: {fileID: 3589356209377692104}
-  shoot_handle: {fileID: 7983199226387077231}
-  Key_w: 0
-  Key_s: 0
-  Key_d: 0
-  Key_a: 0
-  key_reload: 0
-  key_duck: 0
-  key_jump: 0
-  key_run: 0
-  idle: 0
-  forward: 0
-  back: 0
-  right: 0
-  left: 0
-  forward_right: 0
-  back_right: 0
-  forward_left: 0
-  back_left: 0
-  duck: 0
-  duck_walk: 0
-  reload: 0
-  jump: 0
-  run: 0
-  cam_toggled: 0
-  vertical_float_spread: 0
-  horizontal_float_spread: 0
-  player_health: 100
-  ammo_gui: {fileID: 4550345053216115090}
-  health_gui: {fileID: 960238058596669558}
-  vertical_aim_bone_default: {fileID: 499983414356891303}
-  min_angle: 215
-  max_angle: 345
-  vertical_speed: 26
-  horizontal_speed: 26
-  saved_roation_X: 0
-  ani: {fileID: 6110935421208136435}
-  walk_speed: 1
-  run_speed: 1
-  Duck_walk_speed: 0.6
-  controller: {fileID: 1969219394662075292}
-  in_jump: 0
-  jump_speed: 0
-  walking: 0
-  running: 0
-  walking_side: 0
-  state: 
-  old_state: 
-  walk_sound: {fileID: 7381239868001158819}
-  walk_clip: {fileID: 8300000, guid: c9ff6542e42961040b5f76a576429d21, type: 3}
-  run_clip: {fileID: 8300000, guid: b7d9cf30dc8e9e746b5e396febcc2827, type: 3}
-  walk_side_clip: {fileID: 8300000, guid: 6f4fdfc0c264e6243b1c5a402016ffc4, type: 3}
-  walk_duck_clip: {fileID: 8300000, guid: d011bc9b33b1bbe4f8fe9f7d3aa1de54, type: 3}
-  cam: {fileID: 6291681054705479242}
-  _3rd: 0
-  heads:
-  - {fileID: 627723560934540584}
-  - {fileID: 6933259292488169486}
-  - {fileID: 8027153751871294059}
-  skin_folder: {fileID: 0}
-  lamp_a: {fileID: 2212036324025260427, guid: bcd40f689dfe53e489f53b88bc1ff466, type: 3}
-  lamp_laser_a: {fileID: 5160027612145275315, guid: 498c0a38d186d104f95da3ec8ee41bb0, type: 3}
-  lamp_laser_b: {fileID: 9054337964871462114, guid: 5f770afb66728ad45a7396ce82d60f8f, type: 3}
-  laser_a: {fileID: 8170905349316432045, guid: 4fca3b1f61b89c046b9a9f436f3f4d62, type: 3}
-  red_dot_a: {fileID: 8170905349316432045, guid: 4fca3b1f61b89c046b9a9f436f3f4d62, type: 3}
-  red_dot_b: {fileID: 1398347404991545107, guid: c42e877b439bf3f4d96235401389a8c0, type: 3}
-  red_dot_c: {fileID: 2815532821912418379, guid: 136972a43d063a94e8e3255bc91cb587, type: 3}
-  red_dot_d: {fileID: 3122606744771020680, guid: 97e6ae8c37f2acf43a603697ad92128f, type: 3}
-  red_dot_e: {fileID: 284165929352948068, guid: 15b5e50aafef16c4799ac964fc2b2248, type: 3}
-  scope_a: {fileID: 5566109627953750482, guid: a4553dbca7bdbe34aae84380312b316c, type: 3}
-  scope_b: {fileID: 1422891538642211380, guid: 178754c0ce0acdc4497c584c7954fafb, type: 3}
-  scope_c: {fileID: 1667985465570337141, guid: 7c1bb32a509464d47a223524702bc86b, type: 3}
-  suppressor_a: {fileID: 2540503466140143321, guid: 569cd46a989c0754da667e3e0a779bd4, type: 3}
-  suppressor_clustersub: {fileID: 2626341440008569135, guid: d11f3afcd32b01347bf0116fb653b888, type: 3}
-  suppressor_c: {fileID: 2031342572875396748, guid: e2dd374df019d7a4bb549003951bf98e, type: 3}
-  suppressor_d: {fileID: 3208882448268929938, guid: 9d5411356e2e4fe478baf5f0afca0d48, type: 3}
-  drop_assault57: {fileID: 2612097996548242878, guid: 380a1db463340df4e9ef54d081013263, type: 3}
-  drop_fireaxe: {fileID: 7802223299362060185, guid: 478d1466aacf0b946bf340ff5f3dfc91, type: 3}
-  drop_old_pistol: {fileID: 2792818088970967769, guid: 825fafe4628cc194d8ca681647ade90f, type: 3}
-  active_assault57: {fileID: 4420611058050766375}
-  active_fireaxe: {fileID: 4935454897184898424}
-  active_old_pistol: {fileID: 4893833370144526072}
-  Icon_assault57: {fileID: 6769273993087003}
-  Icon_fireaxe: {fileID: 6157906355964122487}
-  Icon_old_pistol: {fileID: 6592434591119552074}
-  assault57_obj: {fileID: 4420611058050766375}
-  assault57_bool: 1
-  old_pistol_obj: {fileID: 4893833370144526072}
-  old_pistol_bool: 0
-  click: {fileID: 8300000, guid: 83f02a2748fb0184d9af1e1488154c23, type: 3}
-  animator_obj: {fileID: 8033153051438479728}
 --- !u!143 &1969219394662075292
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1334,7 +1229,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.000000002619345, y: 0.0026717468, z: 0.000010799842}
+  m_ConnectedAnchor: {x: -0.0000000035506678, y: 0.002671747, z: 0.000010799609}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -1380,7 +1275,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.000000002619345, y: 0.0026717468, z: 0.000010799842}
+  m_ConnectedAnchor: {x: -0.0000000035506678, y: 0.002671747, z: 0.000010799609}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -17233,7 +17128,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.00013597799, y: 0.000008662986, z: 0.00091406313}
+  m_ConnectedAnchor: {x: -0.0001359779, y: 0.0000086639175, z: 0.00091406313}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -17591,7 +17486,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00008924197, y: 0.0028747995, z: -0.000004271047}
+  m_ConnectedAnchor: {x: 0.00008924193, y: 0.0028747995, z: -0.000004271047}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -17940,7 +17835,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00009347048, y: 0.0027478444, z: 0.0017678395}
+  m_ConnectedAnchor: {x: 0.0000934706, y: 0.0027478444, z: 0.0017678395}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -19392,7 +19287,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00008083853, y: 0.004004192, z: 0.000046920504}
+  m_ConnectedAnchor: {x: 0.00008083855, y: 0.004004194, z: 0.00004692004}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -19717,7 +19612,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 1.164154e-10, y: 0.0045184577, z: 0}
+  m_ConnectedAnchor: {x: 4.656616e-10, y: 0.0045184577, z: 4.6566223e-10}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -20409,7 +20304,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000054161, y: -0.0000034506074, z: -0.0008449915}
+  m_ConnectedAnchor: {x: 0.000054161028, y: -0.0000034496761, z: -0.0008449915}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -22671,7 +22566,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0000000024156188, y: 0.0026717456, z: 0.000010807721}
+  m_ConnectedAnchor: {x: 0.0000000033760454, y: 0.0026717451, z: 0.000010807317}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -28064,7 +27959,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 6.984925e-10, y: 0.0045184605, z: 4.6566206e-10}
+  m_ConnectedAnchor: {x: 3.4924624e-10, y: 0.0045184596, z: 4.6566206e-10}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -30728,13 +30623,13 @@ MonoBehaviour:
   vertical_aim_bone_default: {fileID: 499983414356891303}
   min_angle: 215
   max_angle: 345
-  vertical_speed: 26
-  horizontal_speed: 26
+  vertical_speed: 0
+  horizontal_speed: 0
   saved_roation_X: 0
   ani: {fileID: 6110935421208136435}
-  walk_speed: 1
-  run_speed: 1
-  Duck_walk_speed: 0.6
+  walk_speed: 0
+  run_speed: 0
+  Duck_walk_speed: 0
   controller: {fileID: 1969219394662075292}
   in_jump: 0
   jump_speed: 0
