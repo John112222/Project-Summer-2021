@@ -30587,7 +30587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 9104658512821996006}
-  damage: 10
+  damage: 1
   shootKey: 323
   canFire: 0
 --- !u!114 &2890336596721429674
