@@ -18,13 +18,13 @@ public class NetworkedShooting : MonoBehaviourPun
     }
 
     private void Update() {
-        if(photonView.IsMine && canFire && Input.GetKeyDown(shootKey))
-        {
-            Shoot();
-        }
+        //if(photonView.IsMine && canFire && Input.GetKeyDown(shootKey))
+        //{
+          //  Shoot();
+        //}
     }
 
-    public void Shoot()
+    public void Shoot(int dmg=0)
     {
         if(!photonView.IsMine || playerCamera == null) return;
 
@@ -34,7 +34,7 @@ public class NetworkedShooting : MonoBehaviourPun
         if(Physics.Raycast(ray, out RaycastHit hit))
         {
             Debug.Log($"We hit {hit.collider.gameObject.name}");
-            hit.collider.GetComponent<NetworkedHealth>()?.TakeDamage(damage);
+            hit.collider.GetComponent<NetworkedHealth>()?.TakeDamage(dmg==0?damage:dmg);
         }
     }
 }

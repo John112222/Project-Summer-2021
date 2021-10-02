@@ -4,7 +4,9 @@ using UnityEngine.Events;
 public class shoot_handle : MonoBehaviour
 {
     public GameObject recyle_particles_performance;
-    public UnityEvent OnShoot;
+    [System.Serializable]public class ShootEvent: UnityEvent<int> {}
+    
+    public ShootEvent OnShoot;
 
     public void Start()
     {
@@ -56,7 +58,8 @@ public class shoot_handle : MonoBehaviour
     {
 
         
-        OnShoot?.Invoke();
+        OnShoot?.Invoke(dmg);
+
 
         RaycastHit hit;
 
