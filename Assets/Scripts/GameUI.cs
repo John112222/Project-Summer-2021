@@ -2,11 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-using UnityEngine.SceneManagement;
 public class GameUI : MonoBehaviourPunCallbacks
 {
     public GameObject leavingPanel;
-    public string lobbyscene = "Lobby";
 
     void Update(){
         if(Input.GetKeyDown(KeyCode.Escape)){
@@ -21,12 +19,21 @@ public class GameUI : MonoBehaviourPunCallbacks
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    public void LeaveRoom(){
-        PhotonNetwork.DestroyPlayerObjects(PhotonNetwork.LocalPlayer);
-        PhotonNetwork.LeaveLobby();
-        //SceneManager.LoadScene(lobbyscene);
-     }
-     override public void OnLeftLobby(){
-        SceneManager.LoadScene(lobbyscene);
-     }
+    public void LeaveRoom()
+    {
+        print("Leave Room clicked");
+        StartCoroutine(LeavingRoom());
+    }
+     
+    private IEnumerator LeavingRoom()
+    {
+        PhotonNetwork.LeaveRoom();
+        print("Trying to leave room");
+        while(PhotonNetwork.InRoom)
+        {
+            yield return null;
+        }
+        print("Left Room");
+        MenuUtilityScript.LoadLevel(0);
+    }
 }

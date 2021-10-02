@@ -48,7 +48,15 @@ using Photon.Pun;
             cachedRoomList = new Dictionary<string, RoomInfo>();
             roomListEntries = new Dictionary<string, GameObject>();
             
-            PlayerNameInput.text = "Player " + Random.Range(1000, 10000);
+            
+            if(PhotonNetwork.IsConnected)
+            {
+                this.SetActivePanel(SelectionPanel.name);
+            }
+            else
+            {
+                PlayerNameInput.text = "Player " + Random.Range(1000, 10000);
+            }
         }
 
         #endregion
@@ -212,15 +220,20 @@ using Photon.Pun;
             // Debug.LogError($"There was a change in property for Player {targetPlayer.ActorNumber} with {changedProps.ToStringFull()}");
         }
 
+        public override void OnDisconnected (DisconnectCause cause)
+        {
+            MenuUtilityScript.LoadLevel(0);
+        }
+
         #endregion
 
         #region UI CALLBACKS
 
         public void OnBackButtonClicked()
         {
-            if (PhotonNetwork.InLobby)
+            if (PhotonNetwork.InRoom)
             {
-                PhotonNetwork.LeaveLobby();
+                PhotonNetwork.LeaveRoom();
             }
 
             SetActivePanel(SelectionPanel.name);
@@ -249,7 +262,22 @@ using Photon.Pun;
 
         public void OnLeaveGameButtonClicked()
         {
-            PhotonNetwork.LeaveRoom();
+            if (PhotonNetwork.InRoom)
+            {
+                PhotonNetwork.LeaveRoom();
+            }
+        }
+
+        public void OnBackToMenuButtonClicked()
+        {
+            if(PhotonNetwork.IsConnected)
+            {
+                PhotonNetwork.Disconnect();
+            }
+            else
+            {
+                MenuUtilityScript.LoadLevel(0);
+            }
         }
 
         public void OnLoginButtonClicked()

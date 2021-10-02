@@ -769,8 +769,6 @@ GameObject:
   - component: {fileID: 1969219394662075292}
   - component: {fileID: 8231284664835291167}
   - component: {fileID: 2836038350796760774}
-  - component: {fileID: 944650558577652561}
-  - component: {fileID: 864414988732767724}
   m_Layer: 0
   m_Name: Polygon_FPS_prefab
   m_TagString: Player
@@ -803,7 +801,7 @@ CharacterController:
   m_GameObject: {fileID: 286800174980250349}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Height: 1.74
   m_Radius: 0.2
@@ -837,122 +835,10 @@ BoxCollider:
   m_GameObject: {fileID: 286800174980250349}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.54164314, y: 1.5250645, z: 0.3675115}
   m_Center: {x: -0.020123482, y: 0.93388224, z: -0.01439774}
---- !u!81 &944650558577652561
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 286800174980250349}
-  m_Enabled: 1
---- !u!114 &864414988732767724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 286800174980250349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1120563af6de37a488d6c0b06dc17e2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FPS_camera: {fileID: 6291681054705479242}
-  aim_point: {fileID: 3589356209377692104}
-  shoot_handle: {fileID: 7983199226387077231}
-  Key_w: 0
-  Key_s: 0
-  Key_d: 0
-  Key_a: 0
-  key_reload: 0
-  key_duck: 0
-  key_jump: 0
-  key_run: 0
-  idle: 0
-  forward: 0
-  back: 0
-  right: 0
-  left: 0
-  forward_right: 0
-  back_right: 0
-  forward_left: 0
-  back_left: 0
-  duck: 0
-  duck_walk: 0
-  reload: 0
-  jump: 0
-  run: 0
-  cam_toggled: 0
-  vertical_float_spread: 0
-  horizontal_float_spread: 0
-  player_health: 100
-  ammo_gui: {fileID: 4550345053216115090}
-  health_gui: {fileID: 960238058596669558}
-  vertical_aim_bone_default: {fileID: 499983414356891303}
-  min_angle: 215
-  max_angle: 345
-  vertical_speed: 0
-  horizontal_speed: 0
-  saved_roation_X: 0
-  ani: {fileID: 6110935421208136435}
-  walk_speed: 1
-  run_speed: 1
-  Duck_walk_speed: 0.6
-  controller: {fileID: 1969219394662075292}
-  in_jump: 0
-  jump_speed: 0
-  walking: 0
-  running: 0
-  walking_side: 0
-  state: 
-  old_state: 
-  walk_sound: {fileID: 7381239868001158819}
-  walk_clip: {fileID: 8300000, guid: c9ff6542e42961040b5f76a576429d21, type: 3}
-  run_clip: {fileID: 8300000, guid: b7d9cf30dc8e9e746b5e396febcc2827, type: 3}
-  walk_side_clip: {fileID: 8300000, guid: 6f4fdfc0c264e6243b1c5a402016ffc4, type: 3}
-  walk_duck_clip: {fileID: 8300000, guid: d011bc9b33b1bbe4f8fe9f7d3aa1de54, type: 3}
-  cam: {fileID: 6291681054705479242}
-  _3rd: 0
-  heads:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  skin_folder: {fileID: 0}
-  lamp_a: {fileID: 2212036324025260427, guid: bcd40f689dfe53e489f53b88bc1ff466, type: 3}
-  lamp_laser_a: {fileID: 5160027612145275315, guid: 498c0a38d186d104f95da3ec8ee41bb0, type: 3}
-  lamp_laser_b: {fileID: 9054337964871462114, guid: 5f770afb66728ad45a7396ce82d60f8f, type: 3}
-  laser_a: {fileID: 8170905349316432045, guid: 4fca3b1f61b89c046b9a9f436f3f4d62, type: 3}
-  red_dot_a: {fileID: 8170905349316432045, guid: 4fca3b1f61b89c046b9a9f436f3f4d62, type: 3}
-  red_dot_b: {fileID: 1398347404991545107, guid: c42e877b439bf3f4d96235401389a8c0, type: 3}
-  red_dot_c: {fileID: 2815532821912418379, guid: 136972a43d063a94e8e3255bc91cb587, type: 3}
-  red_dot_d: {fileID: 3122606744771020680, guid: 97e6ae8c37f2acf43a603697ad92128f, type: 3}
-  red_dot_e: {fileID: 284165929352948068, guid: 15b5e50aafef16c4799ac964fc2b2248, type: 3}
-  scope_a: {fileID: 5566109627953750482, guid: a4553dbca7bdbe34aae84380312b316c, type: 3}
-  scope_b: {fileID: 1422891538642211380, guid: 178754c0ce0acdc4497c584c7954fafb, type: 3}
-  scope_c: {fileID: 1667985465570337141, guid: 7c1bb32a509464d47a223524702bc86b, type: 3}
-  suppressor_a: {fileID: 2540503466140143321, guid: 569cd46a989c0754da667e3e0a779bd4, type: 3}
-  suppressor_clustersub: {fileID: 2626341440008569135, guid: d11f3afcd32b01347bf0116fb653b888, type: 3}
-  suppressor_c: {fileID: 2031342572875396748, guid: e2dd374df019d7a4bb549003951bf98e, type: 3}
-  suppressor_d: {fileID: 3208882448268929938, guid: 9d5411356e2e4fe478baf5f0afca0d48, type: 3}
-  drop_assault57: {fileID: 2612097996548242878, guid: 380a1db463340df4e9ef54d081013263, type: 3}
-  drop_fireaxe: {fileID: 7802223299362060185, guid: 478d1466aacf0b946bf340ff5f3dfc91, type: 3}
-  drop_old_pistol: {fileID: 2792818088970967769, guid: 825fafe4628cc194d8ca681647ade90f, type: 3}
-  active_assault57: {fileID: 4420611058050766375}
-  active_fireaxe: {fileID: 4935454897184898424}
-  active_old_pistol: {fileID: 4893833370144526072}
-  Icon_assault57: {fileID: 6769273993087003}
-  Icon_fireaxe: {fileID: 7115168829919031695}
-  Icon_old_pistol: {fileID: 9084861493089048436}
-  assault57_obj: {fileID: 4420611058050766375}
-  assault57_bool: 1
-  old_pistol_obj: {fileID: 4893833370144526072}
-  old_pistol_bool: 0
-  click: {fileID: 8300000, guid: 83f02a2748fb0184d9af1e1488154c23, type: 3}
-  animator_obj: {fileID: 0}
 --- !u!1 &303818415558858844
 GameObject:
   m_ObjectHideFlags: 0
@@ -16139,6 +16025,7 @@ GameObject:
   - component: {fileID: 2816224829568252030}
   - component: {fileID: 5364744178180040623}
   - component: {fileID: 374812576173084125}
+  - component: {fileID: 8166616944917388710}
   m_Layer: 0
   m_Name: Assault57
   m_TagString: Untagged
@@ -16284,14 +16171,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4420611058050766375}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ed166e4f1ae948419433097a5db993f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   recyle_particles_performance: {fileID: 0}
   shoot_handle: {fileID: 7983199226387077231}
-  player: {fileID: 286800174980250349}
+  player: {fileID: 9085066350046273480}
   _3rd_view: 0
   _3rd_view_cam: {x: 0.00457, y: 0.00899, z: 0.0062}
   Shoot_start_point: {fileID: 1844943711244935881}
@@ -16324,6 +16211,101 @@ MonoBehaviour:
   red_dot_d_cam: {x: 0.001255, y: -0.0025, z: 0.004645}
   red_dot_e_cam: {x: 0.00127, y: -0.002735, z: 0.00468}
   red_dot_e_cam_obj: {fileID: 6416510190292136750}
+  scope_a_cam: {x: 0.001265, y: -0.002629, z: 0.004496}
+  scope_a_cam_obj: {fileID: 5636809774301857940}
+  scope_b_cam: {x: 0.00126, y: -0.0026, z: 0.004515}
+  scope_b_cam_obj: {fileID: 8156434890781643446}
+  scope_c_cam: {x: 0.00127, y: -0.001999, z: 0.004718}
+  scope_c_cam_obj: {fileID: 6561702382003347122}
+  lamp_a_bool: 0
+  lamp_laser_a_bool: 0
+  lamp_laser_b_bool: 0
+  laser_a_bool: 0
+  red_dot_a_bool: 0
+  red_dot_b_bool: 0
+  red_dot_c_bool: 0
+  red_dot_d_bool: 0
+  red_dot_e_bool: 0
+  scope_a_bool: 0
+  scope_b_bool: 0
+  scope_c_bool: 0
+  suppressor_a_bool: 0
+  suppressor_mac10_bool: 0
+  suppressor_c_bool: 0
+  suppressor_d_bool: 0
+  Equipment_holder_a: {fileID: 4922204665203255417}
+  Equipment_holder_b: {fileID: 2137519702405774463}
+  lamp_a: {fileID: 474057061302275267}
+  lamp_laser_a: {fileID: 1886572811205871387}
+  lamp_laser_b: {fileID: 7824816059835927567}
+  laser_a: {fileID: 7810037626932322144}
+  red_dot_a: {fileID: 4555559141393728123}
+  red_dot_b: {fileID: 8059538204500419248}
+  red_dot_c: {fileID: 9017027819376825719}
+  red_dot_d: {fileID: 3042565303310985797}
+  red_dot_e: {fileID: 4688711255911350949}
+  scope_a: {fileID: 1890861929155115148}
+  scope_b: {fileID: 3941396979800431364}
+  scope_c: {fileID: 5353999875582328052}
+  suppressor_a: {fileID: 3585162765547047328}
+  suppressor_mac10: {fileID: 3231417601060791775}
+  suppressor_c: {fileID: 5913232318489572579}
+  suppressor_d: {fileID: 4865649969278257857}
+  shoot_origin_none_suppressor: {x: -0.000018, y: 0.007157, z: 0.000078}
+  shoot_origin_suppressor: {x: -0.000056, y: 0.00861, z: 0.000081}
+  scope: 0
+  Equipment_holder_a_bool: 0
+  Equipment_holder_b_bool: 0
+  bullet_shell: {fileID: 8091934342544867244, guid: 072b09f469defef4a91d31f821873a7b, type: 3}
+  Bullet_shell_output: {fileID: 8102835122084364095}
+  Bullet_shell_output_position: {x: -0.000333, y: 0.00233, z: 0.000335}
+--- !u!114 &8166616944917388710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4420611058050766375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8665bc2f185994706be5d47d07451fb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recyle_particles_performance: {fileID: 0}
+  shoot_handle: {fileID: 7983199226387077231}
+  player: {fileID: 9085066350046273480}
+  _3rd_view: 0
+  _3rd_view_cam: {x: 0.00457, y: 0.00899, z: 0.0062}
+  Shoot_start_point: {fileID: 1844943711244935881}
+  muzzle: {fileID: 608599103072718906, guid: 4547f8ff15bb82947b85f8c98dee9fd0, type: 3}
+  full_auto: 0
+  firerate: 0.075
+  silence: 0
+  silence_shoot_sound: {fileID: 8300000, guid: f5e2372aea076384ea23e65a143800ee, type: 3}
+  shoot_sound: {fileID: 8300000, guid: eb8db376ee229124799f452cfc6f0833, type: 3}
+  Joule: 1901
+  vertical_force: 0.7
+  horizontal_force: 0.3
+  spread_height: 0.0025
+  current_spread: 0
+  magazine_max: 30
+  magazine_current: 28
+  stored_bullets: 1000
+  reload_unempty: {fileID: 8300000, guid: 2acaed2e9cc9dbd41ad038d82775adfa, type: 3}
+  reload_empty: {fileID: 8300000, guid: c60953862b92d8e4d96e7f4a04670036, type: 3}
+  Clip_on_point: {fileID: 842647149582474905, guid: dd9cfba581d957948a7fc62fbabfc5e0, type: 3}
+  Cam: {fileID: 6291681054705479242}
+  ani: {fileID: 6110935421208136435}
+  idle_cam: {x: 0.00055, y: -0.001147, z: 0.003914}
+  aim_cam: {x: 0.00128, y: -0.00178, z: 0.004336}
+  run_cam: {x: 0.00055, y: -0.00079, z: 0.003914}
+  red_dot_a_cam: {x: 0.0012569, y: -0.00242, z: 0.004498}
+  red_dot_b_cam: {x: 0.00126, y: -0.002412, z: 0.00478}
+  red_dot_c_cam: {x: 0.001265, y: -0.0026, z: 0.00459}
+  red_dot_c_cam_obj: {fileID: 1497368731563640119}
+  red_dot_d_cam: {x: 0.001255, y: -0.0025, z: 0.004645}
+  red_dot_e_cam: {x: 0.00127, y: -0.002735, z: 0.00468}
+  red_dot_e_cam_obj: {fileID: 0}
   scope_a_cam: {x: 0.001265, y: -0.002629, z: 0.004496}
   scope_a_cam_obj: {fileID: 5636809774301857940}
   scope_b_cam: {x: 0.00126, y: -0.0026, z: 0.004515}
@@ -22850,7 +22832,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6291681054705479242}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.00021, y: -0.00203, z: 0.00433}
+  m_LocalPosition: {x: -0.00021, y: -0.00125, z: 0.00445}
   m_LocalScale: {x: 0.010000005, y: 0.009999997, z: 0.01}
   m_Children:
   - {fileID: 465475574927253258}
@@ -26584,7 +26566,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2782488752082105086
 Transform:
   m_ObjectHideFlags: 0
@@ -30526,6 +30508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9079317921835367470}
   - component: {fileID: 9138764743070999802}
+  - component: {fileID: 7533588430903405964}
   - component: {fileID: 9220081186842072192}
   - component: {fileID: 9166565058253873712}
   - component: {fileID: 8395134602997871700}
@@ -30580,6 +30563,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!143 &7533588430903405964
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9085066350046273480}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &9220081186842072192
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -30900,14 +30901,14 @@ MonoBehaviour:
   vertical_aim_bone_default: {fileID: 499983414356891303}
   min_angle: 215
   max_angle: 345
-  vertical_speed: 0
-  horizontal_speed: 0
+  vertical_speed: 10
+  horizontal_speed: 10
   saved_roation_X: 0
   ani: {fileID: 6110935421208136435}
   walk_speed: 1
   run_speed: 1
   Duck_walk_speed: 0.6
-  controller: {fileID: 1969219394662075292}
+  controller: {fileID: 7533588430903405964}
   in_jump: 0
   jump_speed: 0
   walking: 0
@@ -30922,39 +30923,36 @@ MonoBehaviour:
   walk_duck_clip: {fileID: 8300000, guid: d011bc9b33b1bbe4f8fe9f7d3aa1de54, type: 3}
   cam: {fileID: 6291681054705479242}
   _3rd: 0
-  heads:
-  - {fileID: 627723560934540584}
-  - {fileID: 6933259292488169486}
-  - {fileID: 8027153751871294059}
+  heads: []
   skin_folder: {fileID: 0}
   lamp_a: {fileID: 2212036324025260427, guid: bcd40f689dfe53e489f53b88bc1ff466, type: 3}
-  lamp_laser_a: {fileID: 3937764681989806443}
-  lamp_laser_b: {fileID: 7083791386935917322}
-  laser_a: {fileID: 4289261490890018855}
-  red_dot_a: {fileID: 0}
-  red_dot_b: {fileID: 0}
-  red_dot_c: {fileID: 0}
-  red_dot_d: {fileID: 0}
-  red_dot_e: {fileID: 0}
-  scope_a: {fileID: 0}
-  scope_b: {fileID: 0}
-  scope_c: {fileID: 0}
-  suppressor_a: {fileID: 0}
-  suppressor_clustersub: {fileID: 0}
-  suppressor_c: {fileID: 0}
-  suppressor_d: {fileID: 0}
-  drop_assault57: {fileID: 0}
-  drop_fireaxe: {fileID: 0}
-  drop_old_pistol: {fileID: 0}
+  lamp_laser_a: {fileID: 5160027612145275315, guid: 498c0a38d186d104f95da3ec8ee41bb0, type: 3}
+  lamp_laser_b: {fileID: 9054337964871462114, guid: 5f770afb66728ad45a7396ce82d60f8f, type: 3}
+  laser_a: {fileID: 8170905349316432045, guid: 4fca3b1f61b89c046b9a9f436f3f4d62, type: 3}
+  red_dot_a: {fileID: 8170905349316432045, guid: 4fca3b1f61b89c046b9a9f436f3f4d62, type: 3}
+  red_dot_b: {fileID: 1398347404991545107, guid: c42e877b439bf3f4d96235401389a8c0, type: 3}
+  red_dot_c: {fileID: 2815532821912418379, guid: 136972a43d063a94e8e3255bc91cb587, type: 3}
+  red_dot_d: {fileID: 3122606744771020680, guid: 97e6ae8c37f2acf43a603697ad92128f, type: 3}
+  red_dot_e: {fileID: 284165929352948068, guid: 15b5e50aafef16c4799ac964fc2b2248, type: 3}
+  scope_a: {fileID: 5566109627953750482, guid: a4553dbca7bdbe34aae84380312b316c, type: 3}
+  scope_b: {fileID: 1422891538642211380, guid: 178754c0ce0acdc4497c584c7954fafb, type: 3}
+  scope_c: {fileID: 1667985465570337141, guid: 7c1bb32a509464d47a223524702bc86b, type: 3}
+  suppressor_a: {fileID: 2540503466140143321, guid: 569cd46a989c0754da667e3e0a779bd4, type: 3}
+  suppressor_clustersub: {fileID: 2626341440008569135, guid: d11f3afcd32b01347bf0116fb653b888, type: 3}
+  suppressor_c: {fileID: 2031342572875396748, guid: e2dd374df019d7a4bb549003951bf98e, type: 3}
+  suppressor_d: {fileID: 3208882448268929938, guid: 9d5411356e2e4fe478baf5f0afca0d48, type: 3}
+  drop_assault57: {fileID: 2612097996548242878, guid: 380a1db463340df4e9ef54d081013263, type: 3}
+  drop_fireaxe: {fileID: 7802223299362060185, guid: 478d1466aacf0b946bf340ff5f3dfc91, type: 3}
+  drop_old_pistol: {fileID: 2792818088970967769, guid: 825fafe4628cc194d8ca681647ade90f, type: 3}
   active_assault57: {fileID: 4420611058050766375}
-  active_fireaxe: {fileID: 0}
-  active_old_pistol: {fileID: 0}
+  active_fireaxe: {fileID: 4935454897184898424}
+  active_old_pistol: {fileID: 4893833370144526072}
   Icon_assault57: {fileID: 6769273993087003}
-  Icon_fireaxe: {fileID: 0}
-  Icon_old_pistol: {fileID: 0}
+  Icon_fireaxe: {fileID: 7115168829919031695}
+  Icon_old_pistol: {fileID: 9084861493089048436}
   assault57_obj: {fileID: 4420611058050766375}
   assault57_bool: 1
-  old_pistol_obj: {fileID: 0}
+  old_pistol_obj: {fileID: 4893833370144526072}
   old_pistol_bool: 0
   click: {fileID: 8300000, guid: 83f02a2748fb0184d9af1e1488154c23, type: 3}
   animator_obj: {fileID: 8033153051438479728}
