@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class shoot_handle : MonoBehaviour
 {
     public GameObject recyle_particles_performance;
-
+    public UnityEvent OnShoot;
 
     public void Start()
     {
@@ -55,8 +55,8 @@ public class shoot_handle : MonoBehaviour
     public void shoot(Vector3 pos, Vector3 rot, int dmg)
     {
 
-
-
+        
+        OnShoot?.Invoke();
 
         RaycastHit hit;
 
@@ -64,7 +64,7 @@ public class shoot_handle : MonoBehaviour
 
         if (Physics.Raycast(pos, rot, out hit))
         {
-
+            
 
             if (hit.collider.tag == "body")
             {

@@ -51,6 +51,7 @@ public class networked_assault57 : MonoBehaviourPun
 
     void Update()
     {
+        if(!photonView.IsMine)return;
         
         Input_Status();
 
@@ -590,7 +591,7 @@ public class networked_assault57 : MonoBehaviourPun
     {
 
         // changing between firstperson view and 3rd view
-
+        if(Cam==null)return;
 
         if (_3rd_view)
         {

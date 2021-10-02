@@ -28,11 +28,13 @@ public class GameUI : MonoBehaviourPunCallbacks
     private IEnumerator LeavingRoom()
     {
         PhotonNetwork.LeaveRoom();
+        PhotonNetwork.DestroyPlayerObjects(PhotonNetwork.LocalPlayer);
         print("Trying to leave room");
         while(PhotonNetwork.InRoom)
         {
             yield return null;
         }
+
         print("Left Room");
         MenuUtilityScript.LoadLevel(0);
     }
