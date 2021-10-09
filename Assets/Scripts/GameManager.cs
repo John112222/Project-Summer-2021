@@ -118,4 +118,10 @@ public class GameManager : MonoBehaviourPunCallbacks
   {
     gameStopped = true;
   }
+  [PunRPC]
+  public void ResetGame(){
+    if(PhotonNetwork.IsMasterClient){
+      PhotonNetwork.LoadLevel(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+    }
+  }
 }

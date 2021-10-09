@@ -16108,7 +16108,7 @@ MonoBehaviour:
   silence: 0
   silence_shoot_sound: {fileID: 8300000, guid: f5e2372aea076384ea23e65a143800ee, type: 3}
   shoot_sound: {fileID: 8300000, guid: eb8db376ee229124799f452cfc6f0833, type: 3}
-  Joule: 1901
+  Joule: 10
   vertical_force: 0.7
   horizontal_force: 0.3
   spread_height: 0.0025
@@ -30267,6 +30267,7 @@ GameObject:
   - component: {fileID: 4631160853540078311}
   - component: {fileID: 2890336596721429674}
   - component: {fileID: 6504711019197865657}
+  - component: {fileID: -5879296027347609603}
   m_Layer: 0
   m_Name: New FPS Controller
   m_TagString: Untagged
@@ -30649,12 +30650,12 @@ MonoBehaviour:
   vertical_aim_bone_default: {fileID: 499983414356891303}
   min_angle: 215
   max_angle: 345
-  vertical_speed: 10
-  horizontal_speed: 10
+  vertical_speed: 0
+  horizontal_speed: 0
   saved_roation_X: 0
   ani: {fileID: 6110935421208136435}
-  walk_speed: 1
-  run_speed: 1
+  walk_speed: 0
+  run_speed: 0
   Duck_walk_speed: 0.6
   controller: {fileID: 7533588430903405964}
   in_jump: 0
@@ -30704,6 +30705,25 @@ MonoBehaviour:
   old_pistol_bool: 0
   click: {fileID: 8300000, guid: 83f02a2748fb0184d9af1e1488154c23, type: 3}
   animator_obj: {fileID: 8033153051438479728}
+--- !u!114 &-5879296027347609603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9085066350046273480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f72940f330098a74f903249923b4854f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Upkey: 119
+  Jumpkey: 32
+  Downkey: 115
+  Rightkey: 100
+  Leftkey: 97
+  Speed: 0.1
+  jumppower: 10
 --- !u!1 &9085077189478542288
 GameObject:
   m_ObjectHideFlags: 0
