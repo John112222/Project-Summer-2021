@@ -304,7 +304,7 @@ public class networked_assault57 : MonoBehaviourPun
         yield return new WaitForSeconds(0);
 
 
-
+        rpcmuzzleflash();
 
 
         // increasing the spread, while in automatic fire
@@ -351,8 +351,7 @@ public class networked_assault57 : MonoBehaviourPun
         }
 
 
-        GameObject spawned_muzzle = Instantiate(muzzle, Shoot_start_point.transform.position, Shoot_start_point.transform.rotation);
-        spawned_muzzle.GetComponent<muzzle_flash>().origin = Shoot_start_point;
+        
 
 
         // adding shoot sound
@@ -932,6 +931,11 @@ public class networked_assault57 : MonoBehaviourPun
 
     }
 
+    [PunRPC]
+    public void rpcmuzzleflash(){
+        GameObject spawned_muzzle = Instantiate(muzzle, Shoot_start_point.transform.position, Shoot_start_point.transform.rotation);
+        spawned_muzzle.GetComponent<muzzle_flash>().origin = Shoot_start_point;
+    }
 
 
 

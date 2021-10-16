@@ -80,7 +80,7 @@ public class NetpolygonFpsController : MonoBehaviourPun
 
             active_assault57.SetActive(true);
             Icon_assault57.SetActive(true);
-            active_assault57.GetComponent<assault57>().Start();
+            active_assault57.GetComponentInChildren<networked_assault57>().Start();
 
             // restarting animator
             animator_obj.SetActive(false);
@@ -188,7 +188,7 @@ public class NetpolygonFpsController : MonoBehaviourPun
 
         if (active_assault57.activeSelf)
         {
-            ammo_gui.text = active_assault57.GetComponent<assault57>().magazine_current + " / " + active_assault57.GetComponent<assault57>().stored_bullets;
+            ammo_gui.text = active_assault57.GetComponentInChildren<networked_assault57>().magazine_current + " / " + active_assault57.GetComponentInChildren<networked_assault57>().stored_bullets;
         }
         
         if (active_fireaxe.activeSelf)
@@ -1115,46 +1115,46 @@ public class NetpolygonFpsController : MonoBehaviourPun
             {
 
                 AudioSource.PlayClipAtPoint(click, transform.position);
-                assault57_obj.GetComponent<assault57>().Equipment_holder_b_bool = true;
+                assault57_obj.GetComponentInChildren<networked_assault57>().Equipment_holder_b_bool = true;
                 destroy = true;
 
-                assault57_obj.GetComponent<assault57>().lamp_a_bool = true;
+                assault57_obj.GetComponentInChildren<networked_assault57>().lamp_a_bool = true;
 
               
 
-                if (assault57_obj.GetComponent<assault57>().lamp_laser_b_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().lamp_laser_b_bool)
                 {
                     Drop("lamp_laser_b");
                 }
 
 
-                assault57_obj.GetComponent<assault57>().lamp_laser_b_bool = false;
+                assault57_obj.GetComponentInChildren<networked_assault57>().lamp_laser_b_bool = false;
 
-                assault57_obj.GetComponent<assault57>().change_equipment();
+                assault57_obj.GetComponentInChildren<networked_assault57>().change_equipment();
 
 
             }
             if (which == "lamp_laser_b")
             {
                 AudioSource.PlayClipAtPoint(click, transform.position);
-                assault57_obj.GetComponent<assault57>().Equipment_holder_b_bool = true;
+                assault57_obj.GetComponentInChildren<networked_assault57>().Equipment_holder_b_bool = true;
                 destroy = true;
 
-                assault57_obj.GetComponent<assault57>().lamp_laser_b_bool = true;
+                assault57_obj.GetComponentInChildren<networked_assault57>().lamp_laser_b_bool = true;
 
                
 
-                if (assault57_obj.GetComponent<assault57>().lamp_a_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().lamp_a_bool)
                 {
                     Drop("lamp_a");
 
-                    assault57_obj.GetComponent<assault57>().lamp_a_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().lamp_a_bool = false;
                 }
 
 
 
 
-                assault57_obj.GetComponent<assault57>().change_equipment();
+                assault57_obj.GetComponentInChildren<networked_assault57>().change_equipment();
 
 
             }
@@ -1163,24 +1163,24 @@ public class NetpolygonFpsController : MonoBehaviourPun
             if (which == "laser_a")
             {
                 AudioSource.PlayClipAtPoint(click, transform.position);
-                assault57_obj.GetComponent<assault57>().Equipment_holder_b_bool = true;
+                assault57_obj.GetComponentInChildren<networked_assault57>().Equipment_holder_b_bool = true;
                 destroy = true;
 
-                assault57_obj.GetComponent<assault57>().laser_a_bool = true;
+                assault57_obj.GetComponentInChildren<networked_assault57>().laser_a_bool = true;
 
 
 
-                if (assault57_obj.GetComponent<assault57>().lamp_laser_a_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().lamp_laser_a_bool)
                 {
                     Drop("lamp_laser_a");
 
-                    assault57_obj.GetComponent<assault57>().lamp_laser_a_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().lamp_laser_a_bool = false;
                 }
 
 
 
 
-                assault57_obj.GetComponent<assault57>().change_equipment();
+                assault57_obj.GetComponentInChildren<networked_assault57>().change_equipment();
 
 
 
@@ -1188,24 +1188,24 @@ public class NetpolygonFpsController : MonoBehaviourPun
             if (which == "lamp_laser_a")
             {
                 AudioSource.PlayClipAtPoint(click, transform.position);
-                assault57_obj.GetComponent<assault57>().Equipment_holder_b_bool = true;
+                assault57_obj.GetComponentInChildren<networked_assault57>().Equipment_holder_b_bool = true;
                 destroy = true;
 
-                assault57_obj.GetComponent<assault57>().lamp_laser_a_bool = true;
+                assault57_obj.GetComponentInChildren<networked_assault57>().lamp_laser_a_bool = true;
 
 
 
-                if (assault57_obj.GetComponent<assault57>().laser_a_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().laser_a_bool)
                 {
                     Drop("lamp_laser_a");
 
-                    assault57_obj.GetComponent<assault57>().laser_a_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().laser_a_bool = false;
                 }
 
 
 
 
-                assault57_obj.GetComponent<assault57>().change_equipment();
+                assault57_obj.GetComponentInChildren<networked_assault57>().change_equipment();
 
 
 
@@ -1225,67 +1225,67 @@ public class NetpolygonFpsController : MonoBehaviourPun
                 
 
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_a_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_a_bool)
                 {
                     Drop("red_dot_a");
-                    assault57_obj.GetComponent<assault57>().red_dot_a_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_a_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_b_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_b_bool)
                 {
                     Drop("red_dot_b");
-                    assault57_obj.GetComponent<assault57>().red_dot_b_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_b_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_c_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_c_bool)
                 {
                     Drop("red_dot_c");
-                    assault57_obj.GetComponent<assault57>().red_dot_c_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_c_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_d_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_d_bool)
                 {
                     Drop("red_dot_d");
-                    assault57_obj.GetComponent<assault57>().red_dot_d_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_d_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_e_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_e_bool)
                 {
                     Drop("red_dot_e");
-                    assault57_obj.GetComponent<assault57>().red_dot_e_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_e_bool = false;
                 }
 
 
 
-                if (assault57_obj.GetComponent<assault57>().scope_a_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().scope_a_bool)
                 {
                     Drop("scope_a");
-                    assault57_obj.GetComponent<assault57>().scope_a_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().scope_a_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().scope_b_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().scope_b_bool)
                 {
                     Drop("scope_b");
-                    assault57_obj.GetComponent<assault57>().scope_b_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().scope_b_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().scope_c_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().scope_c_bool)
                 {
                     Drop("scope_c");
-                    assault57_obj.GetComponent<assault57>().scope_c_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().scope_c_bool = false;
                 }
 
                 Debug.Log("worked");
 
-                assault57_obj.GetComponent<assault57>().Equipment_holder_a_bool = true;
+                assault57_obj.GetComponentInChildren<networked_assault57>().Equipment_holder_a_bool = true;
 
-                assault57_obj.GetComponent<assault57>().red_dot_a_bool = true;
-
-
+                assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_a_bool = true;
 
 
 
-                assault57_obj.GetComponent<assault57>().change_equipment();
+
+
+                assault57_obj.GetComponentInChildren<networked_assault57>().change_equipment();
 
 
             }
@@ -1298,66 +1298,66 @@ public class NetpolygonFpsController : MonoBehaviourPun
               
 
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_a_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_a_bool)
                 {
                     Drop("red_dot_a");
-                    assault57_obj.GetComponent<assault57>().red_dot_a_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_a_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_b_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_b_bool)
                 {
                     Drop("red_dot_b");
-                    assault57_obj.GetComponent<assault57>().red_dot_b_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_b_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_c_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_c_bool)
                 {
                     Drop("red_dot_c");
-                    assault57_obj.GetComponent<assault57>().red_dot_c_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_c_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_d_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_d_bool)
                 {
                     Drop("red_dot_d");
-                    assault57_obj.GetComponent<assault57>().red_dot_d_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_d_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_e_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_e_bool)
                 {
                     Drop("red_dot_e");
-                    assault57_obj.GetComponent<assault57>().red_dot_e_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_e_bool = false;
                 }
 
 
 
-                if (assault57_obj.GetComponent<assault57>().scope_a_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().scope_a_bool)
                 {
                     Drop("scope_a");
-                    assault57_obj.GetComponent<assault57>().scope_a_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().scope_a_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().scope_b_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().scope_b_bool)
                 {
                     Drop("scope_b");
-                    assault57_obj.GetComponent<assault57>().scope_b_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().scope_b_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().scope_c_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().scope_c_bool)
                 {
                     Drop("scope_c");
-                    assault57_obj.GetComponent<assault57>().scope_c_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().scope_c_bool = false;
                 }
 
 
-                assault57_obj.GetComponent<assault57>().Equipment_holder_a_bool = true;
+                assault57_obj.GetComponentInChildren<networked_assault57>().Equipment_holder_a_bool = true;
 
-                assault57_obj.GetComponent<assault57>().red_dot_b_bool = true;
-
-
+                assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_b_bool = true;
 
 
 
-                assault57_obj.GetComponent<assault57>().change_equipment();
+
+
+                assault57_obj.GetComponentInChildren<networked_assault57>().change_equipment();
 
 
             }
@@ -1370,66 +1370,66 @@ public class NetpolygonFpsController : MonoBehaviourPun
                
 
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_a_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_a_bool)
                 {
                     Drop("red_dot_a");
-                    assault57_obj.GetComponent<assault57>().red_dot_a_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_a_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_b_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_b_bool)
                 {
                     Drop("red_dot_b");
-                    assault57_obj.GetComponent<assault57>().red_dot_b_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_b_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_c_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_c_bool)
                 {
                     Drop("red_dot_c");
-                    assault57_obj.GetComponent<assault57>().red_dot_c_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_c_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_d_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_d_bool)
                 {
                     Drop("red_dot_d");
-                    assault57_obj.GetComponent<assault57>().red_dot_d_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_d_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_e_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_e_bool)
                 {
                     Drop("red_dot_e");
-                    assault57_obj.GetComponent<assault57>().red_dot_e_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_e_bool = false;
                 }
 
 
 
-                if (assault57_obj.GetComponent<assault57>().scope_a_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().scope_a_bool)
                 {
                     Drop("scope_a");
-                    assault57_obj.GetComponent<assault57>().scope_a_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().scope_a_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().scope_b_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().scope_b_bool)
                 {
                     Drop("scope_b");
-                    assault57_obj.GetComponent<assault57>().scope_b_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().scope_b_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().scope_c_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().scope_c_bool)
                 {
                     Drop("scope_c");
-                    assault57_obj.GetComponent<assault57>().scope_c_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().scope_c_bool = false;
                 }
 
 
-                assault57_obj.GetComponent<assault57>().Equipment_holder_a_bool = true;
+                assault57_obj.GetComponentInChildren<networked_assault57>().Equipment_holder_a_bool = true;
 
-                assault57_obj.GetComponent<assault57>().red_dot_c_bool = true;
-
-
+                assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_c_bool = true;
 
 
 
-                assault57_obj.GetComponent<assault57>().change_equipment();
+
+
+                assault57_obj.GetComponentInChildren<networked_assault57>().change_equipment();
 
 
             }
@@ -1441,66 +1441,66 @@ public class NetpolygonFpsController : MonoBehaviourPun
 
                
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_a_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_a_bool)
                 {
                     Drop("red_dot_a");
-                    assault57_obj.GetComponent<assault57>().red_dot_a_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_a_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_b_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_b_bool)
                 {
                     Drop("red_dot_b");
-                    assault57_obj.GetComponent<assault57>().red_dot_b_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_b_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_c_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_c_bool)
                 {
                     Drop("red_dot_c");
-                    assault57_obj.GetComponent<assault57>().red_dot_c_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_c_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_d_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_d_bool)
                 {
                     Drop("red_dot_d");
-                    assault57_obj.GetComponent<assault57>().red_dot_d_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_d_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_e_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_e_bool)
                 {
                     Drop("red_dot_e");
-                    assault57_obj.GetComponent<assault57>().red_dot_e_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_e_bool = false;
                 }
 
 
 
-                if (assault57_obj.GetComponent<assault57>().scope_a_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().scope_a_bool)
                 {
                     Drop("scope_a");
-                    assault57_obj.GetComponent<assault57>().scope_a_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().scope_a_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().scope_b_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().scope_b_bool)
                 {
                     Drop("scope_b");
-                    assault57_obj.GetComponent<assault57>().scope_b_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().scope_b_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().scope_c_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().scope_c_bool)
                 {
                     Drop("scope_c");
-                    assault57_obj.GetComponent<assault57>().scope_c_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().scope_c_bool = false;
                 }
 
 
-                assault57_obj.GetComponent<assault57>().Equipment_holder_a_bool = true;
+                assault57_obj.GetComponentInChildren<networked_assault57>().Equipment_holder_a_bool = true;
 
-                assault57_obj.GetComponent<assault57>().red_dot_d_bool = true;
-
-
+                assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_d_bool = true;
 
 
 
-                assault57_obj.GetComponent<assault57>().change_equipment();
+
+
+                assault57_obj.GetComponentInChildren<networked_assault57>().change_equipment();
 
 
             }
@@ -1513,66 +1513,66 @@ public class NetpolygonFpsController : MonoBehaviourPun
                
 
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_a_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_a_bool)
                 {
                     Drop("red_dot_a");
-                    assault57_obj.GetComponent<assault57>().red_dot_a_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_a_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_b_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_b_bool)
                 {
                     Drop("red_dot_b");
-                    assault57_obj.GetComponent<assault57>().red_dot_b_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_b_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_c_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_c_bool)
                 {
                     Drop("red_dot_c");
-                    assault57_obj.GetComponent<assault57>().red_dot_c_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_c_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_d_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_d_bool)
                 {
                     Drop("red_dot_d");
-                    assault57_obj.GetComponent<assault57>().red_dot_d_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_d_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_e_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_e_bool)
                 {
                     Drop("red_dot_e");
-                    assault57_obj.GetComponent<assault57>().red_dot_e_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_e_bool = false;
                 }
 
 
 
-                if (assault57_obj.GetComponent<assault57>().scope_a_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().scope_a_bool)
                 {
                     Drop("scope_a");
-                    assault57_obj.GetComponent<assault57>().scope_a_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().scope_a_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().scope_b_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().scope_b_bool)
                 {
                     Drop("scope_b");
-                    assault57_obj.GetComponent<assault57>().scope_b_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().scope_b_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().scope_c_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().scope_c_bool)
                 {
                     Drop("scope_c");
-                    assault57_obj.GetComponent<assault57>().scope_c_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().scope_c_bool = false;
                 }
 
 
-                assault57_obj.GetComponent<assault57>().Equipment_holder_a_bool = true;
+                assault57_obj.GetComponentInChildren<networked_assault57>().Equipment_holder_a_bool = true;
 
-                assault57_obj.GetComponent<assault57>().red_dot_e_bool = true;
-
-
+                assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_e_bool = true;
 
 
 
-                assault57_obj.GetComponent<assault57>().change_equipment();
+
+
+                assault57_obj.GetComponentInChildren<networked_assault57>().change_equipment();
 
 
             }
@@ -1585,66 +1585,66 @@ public class NetpolygonFpsController : MonoBehaviourPun
          
 
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_a_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_a_bool)
                 {
                     Drop("red_dot_a");
-                    assault57_obj.GetComponent<assault57>().red_dot_a_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_a_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_b_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_b_bool)
                 {
                     Drop("red_dot_b");
-                    assault57_obj.GetComponent<assault57>().red_dot_b_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_b_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_c_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_c_bool)
                 {
                     Drop("red_dot_c");
-                    assault57_obj.GetComponent<assault57>().red_dot_c_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_c_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_d_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_d_bool)
                 {
                     Drop("red_dot_d");
-                    assault57_obj.GetComponent<assault57>().red_dot_d_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_d_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_e_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_e_bool)
                 {
                     Drop("red_dot_e");
-                    assault57_obj.GetComponent<assault57>().red_dot_e_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_e_bool = false;
                 }
 
 
 
-                if (assault57_obj.GetComponent<assault57>().scope_a_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().scope_a_bool)
                 {
                     Drop("scope_a");
-                    assault57_obj.GetComponent<assault57>().scope_a_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().scope_a_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().scope_b_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().scope_b_bool)
                 {
                     Drop("scope_b");
-                    assault57_obj.GetComponent<assault57>().scope_b_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().scope_b_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().scope_c_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().scope_c_bool)
                 {
                     Drop("scope_c");
-                    assault57_obj.GetComponent<assault57>().scope_c_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().scope_c_bool = false;
                 }
 
 
-                assault57_obj.GetComponent<assault57>().Equipment_holder_a_bool = true;
+                assault57_obj.GetComponentInChildren<networked_assault57>().Equipment_holder_a_bool = true;
 
-                assault57_obj.GetComponent<assault57>().scope_a_bool = true;
-
-
+                assault57_obj.GetComponentInChildren<networked_assault57>().scope_a_bool = true;
 
 
 
-                assault57_obj.GetComponent<assault57>().change_equipment();
+
+
+                assault57_obj.GetComponentInChildren<networked_assault57>().change_equipment();
 
 
             }
@@ -1657,66 +1657,66 @@ public class NetpolygonFpsController : MonoBehaviourPun
              
 
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_a_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_a_bool)
                 {
                     Drop("red_dot_a");
-                    assault57_obj.GetComponent<assault57>().red_dot_a_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_a_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_b_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_b_bool)
                 {
                     Drop("red_dot_b");
-                    assault57_obj.GetComponent<assault57>().red_dot_b_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_b_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_c_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_c_bool)
                 {
                     Drop("red_dot_c");
-                    assault57_obj.GetComponent<assault57>().red_dot_c_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_c_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_d_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_d_bool)
                 {
                     Drop("red_dot_d");
-                    assault57_obj.GetComponent<assault57>().red_dot_d_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_d_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_e_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_e_bool)
                 {
                     Drop("red_dot_e");
-                    assault57_obj.GetComponent<assault57>().red_dot_e_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_e_bool = false;
                 }
 
 
 
-                if (assault57_obj.GetComponent<assault57>().scope_a_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().scope_a_bool)
                 {
                     Drop("scope_a");
-                    assault57_obj.GetComponent<assault57>().scope_a_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().scope_a_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().scope_b_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().scope_b_bool)
                 {
                     Drop("scope_b");
-                    assault57_obj.GetComponent<assault57>().scope_b_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().scope_b_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().scope_c_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().scope_c_bool)
                 {
                     Drop("scope_c");
-                    assault57_obj.GetComponent<assault57>().scope_c_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().scope_c_bool = false;
                 }
 
 
-                assault57_obj.GetComponent<assault57>().Equipment_holder_a_bool = true;
+                assault57_obj.GetComponentInChildren<networked_assault57>().Equipment_holder_a_bool = true;
 
-                assault57_obj.GetComponent<assault57>().scope_b_bool = true;
-
-
+                assault57_obj.GetComponentInChildren<networked_assault57>().scope_b_bool = true;
 
 
 
-                assault57_obj.GetComponent<assault57>().change_equipment();
+
+
+                assault57_obj.GetComponentInChildren<networked_assault57>().change_equipment();
 
 
             }
@@ -1729,66 +1729,66 @@ public class NetpolygonFpsController : MonoBehaviourPun
               
 
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_a_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_a_bool)
                 {
                     Drop("red_dot_a");
-                    assault57_obj.GetComponent<assault57>().red_dot_a_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_a_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_b_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_b_bool)
                 {
                     Drop("red_dot_b");
-                    assault57_obj.GetComponent<assault57>().red_dot_b_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_b_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_c_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_c_bool)
                 {
                     Drop("red_dot_c");
-                    assault57_obj.GetComponent<assault57>().red_dot_c_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_c_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_d_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_d_bool)
                 {
                     Drop("red_dot_d");
-                    assault57_obj.GetComponent<assault57>().red_dot_d_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_d_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().red_dot_e_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_e_bool)
                 {
                     Drop("red_dot_e");
-                    assault57_obj.GetComponent<assault57>().red_dot_e_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().red_dot_e_bool = false;
                 }
 
 
 
-                if (assault57_obj.GetComponent<assault57>().scope_a_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().scope_a_bool)
                 {
                     Drop("scope_a");
-                    assault57_obj.GetComponent<assault57>().scope_a_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().scope_a_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().scope_b_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().scope_b_bool)
                 {
                     Drop("scope_b");
-                    assault57_obj.GetComponent<assault57>().scope_b_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().scope_b_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().scope_c_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().scope_c_bool)
                 {
                     Drop("scope_c");
-                    assault57_obj.GetComponent<assault57>().scope_c_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().scope_c_bool = false;
                 }
 
 
-                assault57_obj.GetComponent<assault57>().Equipment_holder_a_bool = true;
+                assault57_obj.GetComponentInChildren<networked_assault57>().Equipment_holder_a_bool = true;
 
-                assault57_obj.GetComponent<assault57>().scope_c_bool = true;
-
-
+                assault57_obj.GetComponentInChildren<networked_assault57>().scope_c_bool = true;
 
 
 
-                assault57_obj.GetComponent<assault57>().change_equipment();
+
+
+                assault57_obj.GetComponentInChildren<networked_assault57>().change_equipment();
 
 
             }
@@ -1803,30 +1803,30 @@ public class NetpolygonFpsController : MonoBehaviourPun
                 destroy = true;
 
 
-                if (assault57_obj.GetComponent<assault57>().suppressor_a_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().suppressor_a_bool)
                 {
                     Drop("suppressor_a");
 
-                    assault57_obj.GetComponent<assault57>().suppressor_a_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().suppressor_a_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().suppressor_c_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().suppressor_c_bool)
                 {
                     Drop("suppressor_c");
 
-                    assault57_obj.GetComponent<assault57>().suppressor_c_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().suppressor_c_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().suppressor_d_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().suppressor_d_bool)
                 {
                     Drop("suppressor_d");
 
-                    assault57_obj.GetComponent<assault57>().suppressor_d_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().suppressor_d_bool = false;
                 }
 
-                assault57_obj.GetComponent<assault57>().suppressor_a_bool = true;
+                assault57_obj.GetComponentInChildren<networked_assault57>().suppressor_a_bool = true;
 
-                assault57_obj.GetComponent<assault57>().change_equipment();
+                assault57_obj.GetComponentInChildren<networked_assault57>().change_equipment();
 
 
 
@@ -1841,30 +1841,30 @@ public class NetpolygonFpsController : MonoBehaviourPun
 
                 destroy = true;
 
-                if (assault57_obj.GetComponent<assault57>().suppressor_a_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().suppressor_a_bool)
                 {
                     Drop("suppressor_a");
 
-                    assault57_obj.GetComponent<assault57>().suppressor_a_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().suppressor_a_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().suppressor_c_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().suppressor_c_bool)
                 {
                     Drop("suppressor_c");
 
-                    assault57_obj.GetComponent<assault57>().suppressor_c_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().suppressor_c_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().suppressor_d_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().suppressor_d_bool)
                 {
                     Drop("suppressor_d");
 
-                    assault57_obj.GetComponent<assault57>().suppressor_d_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().suppressor_d_bool = false;
                 }
 
-                assault57_obj.GetComponent<assault57>().suppressor_c_bool = true;
+                assault57_obj.GetComponentInChildren<networked_assault57>().suppressor_c_bool = true;
 
-                assault57_obj.GetComponent<assault57>().change_equipment();
+                assault57_obj.GetComponentInChildren<networked_assault57>().change_equipment();
 
 
 
@@ -1877,30 +1877,30 @@ public class NetpolygonFpsController : MonoBehaviourPun
                 destroy = true;
 
 
-                if (assault57_obj.GetComponent<assault57>().suppressor_a_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().suppressor_a_bool)
                 {
                     Drop("suppressor_a");
 
-                    assault57_obj.GetComponent<assault57>().suppressor_a_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().suppressor_a_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().suppressor_c_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().suppressor_c_bool)
                 {
                     Drop("suppressor_c");
 
-                    assault57_obj.GetComponent<assault57>().suppressor_c_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().suppressor_c_bool = false;
                 }
 
-                if (assault57_obj.GetComponent<assault57>().suppressor_d_bool)
+                if (assault57_obj.GetComponentInChildren<networked_assault57>().suppressor_d_bool)
                 {
                     Drop("suppressor_d");
 
-                    assault57_obj.GetComponent<assault57>().suppressor_d_bool = false;
+                    assault57_obj.GetComponentInChildren<networked_assault57>().suppressor_d_bool = false;
                 }
 
-                assault57_obj.GetComponent<assault57>().suppressor_d_bool = true;
+                assault57_obj.GetComponentInChildren<networked_assault57>().suppressor_d_bool = true;
 
-                assault57_obj.GetComponent<assault57>().change_equipment();
+                assault57_obj.GetComponentInChildren<networked_assault57>().change_equipment();
 
 
 
@@ -2206,7 +2206,7 @@ public class NetpolygonFpsController : MonoBehaviourPun
 
             active_assault57.SetActive(true);
             Icon_assault57.SetActive(true);
-            active_assault57.GetComponent<assault57>().Start();
+            active_assault57.GetComponentInChildren<networked_assault57>().Start();
 
             // restarting the animator
             animator_obj.SetActive(false);
@@ -2286,7 +2286,7 @@ public class NetpolygonFpsController : MonoBehaviourPun
         // leaving all weapon scripts
 
 
-        active_assault57.GetComponent<assault57>().turn_off_weapon();
+        active_assault57.GetComponentInChildren<networked_assault57>().turn_off_weapon();
        
         active_fireaxe.GetComponent<axe>().turn_off_weapon();
      

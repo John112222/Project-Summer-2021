@@ -16098,7 +16098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recyle_particles_performance: {fileID: 0}
   shoot_handle: {fileID: 7983199226387077231}
-  netpolygonFpsController: {fileID: 0}
+  netpolygonFpsController: {fileID: 6504711019197865657}
   player: {fileID: 9085066350046273480}
   _3rd_view: 0
   _3rd_view_cam: {x: 0.00457, y: 0.00899, z: 0.0062}
@@ -16131,7 +16131,7 @@ MonoBehaviour:
   red_dot_c_cam_obj: {fileID: 1497368731563640119}
   red_dot_d_cam: {x: 0.001255, y: -0.0025, z: 0.004645}
   red_dot_e_cam: {x: 0.00127, y: -0.002735, z: 0.00468}
-  red_dot_e_cam_obj: {fileID: 0}
+  red_dot_e_cam_obj: {fileID: 6416510190292136750}
   scope_a_cam: {x: 0.001265, y: -0.002629, z: 0.004496}
   scope_a_cam_obj: {fileID: 5636809774301857940}
   scope_b_cam: {x: 0.00126, y: -0.0026, z: 0.004515}
@@ -22617,9 +22617,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6291681054705479242}
-  m_LocalRotation: {x: 0.70710677, y: 0.000000029802319, z: -0, w: 0.7071069}
-  m_LocalPosition: {x: -0.00023922417, y: -0.0014897409, z: 0.0040623997}
-  m_LocalScale: {x: 0.012500004, y: 0.012499995, z: 0.012499994}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.00021, y: 0.000125, z: 0.00445}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 465475574927253258}
   - {fileID: 3982461564662953889}
