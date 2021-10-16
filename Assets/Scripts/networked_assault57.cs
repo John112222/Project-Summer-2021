@@ -9,11 +9,13 @@ public class networked_assault57 : MonoBehaviourPun
 
 
     public GameObject recyle_particles_performance;
-    public GameObject shoot_handle;
+    public GameObject shoot_handle; 
+    [SerializeField] NetpolygonFpsController netpolygonFpsController;
     public void Start()
     {
 
-        shoot_handle = player.GetComponent<NetpolygonFpsController>().shoot_handle;
+        netpolygonFpsController = player.GetComponent<NetpolygonFpsController>();
+        shoot_handle = netpolygonFpsController.shoot_handle;
 
         change_equipment();
         recyle_particles_performance = GameObject.FindGameObjectWithTag("rycle");
@@ -22,7 +24,7 @@ public class networked_assault57 : MonoBehaviourPun
 
 
         ani.SetInteger("assault57", 0);
-        _3rd_view = player.GetComponent<NetpolygonFpsController>()._3rd;
+        _3rd_view = netpolygonFpsController._3rd;
 
 
 
@@ -56,12 +58,12 @@ public class networked_assault57 : MonoBehaviourPun
         Input_Status();
 
         // Input from the main player
-        running = player.GetComponent<NetpolygonFpsController>().running;
-        walking = player.GetComponent<NetpolygonFpsController>().walking;
-        walking_side = player.GetComponent<NetpolygonFpsController>().walking_side;
-        duck_walk = player.GetComponent<NetpolygonFpsController>().duck_walk;
-        reload = player.GetComponent<NetpolygonFpsController>().reload;
-        cam_toggled = player.GetComponent<NetpolygonFpsController>().cam_toggled;
+        running = netpolygonFpsController.running;
+        walking = netpolygonFpsController.walking;
+        walking_side = netpolygonFpsController.walking_side;
+        duck_walk = netpolygonFpsController.duck_walk;
+        reload = netpolygonFpsController.reload;
+        cam_toggled = netpolygonFpsController.cam_toggled;
 
         // push force, which pushes the shoot animation back.
 
@@ -217,14 +219,14 @@ public class networked_assault57 : MonoBehaviourPun
         if (cam_toggled)
         {
             _3rd_view = true;
-            player.GetComponent<NetpolygonFpsController>()._3rd = false;
-            player.GetComponent<NetpolygonFpsController>().head_3rd_status();
+            netpolygonFpsController._3rd = false;
+            netpolygonFpsController.head_3rd_status();
         }
         else
         {
             _3rd_view = false;
-            player.GetComponent<NetpolygonFpsController>()._3rd = true;
-            player.GetComponent<NetpolygonFpsController>().head_3rd_status();
+            netpolygonFpsController._3rd = true;
+            netpolygonFpsController.head_3rd_status();
         }
 
 
@@ -336,16 +338,16 @@ public class networked_assault57 : MonoBehaviourPun
         // full recoil
         if (!suppressor_a_bool && !suppressor_mac10_bool && !suppressor_c_bool && !suppressor_d_bool)
         {
-            player.GetComponent<NetpolygonFpsController>().vertical_float_spread = -add_ver_force;
-            player.GetComponent<NetpolygonFpsController>().horizontal_float_spread = add_hor_force;
+            netpolygonFpsController.vertical_float_spread = -add_ver_force;
+            netpolygonFpsController.horizontal_float_spread = add_hor_force;
         }
 
 
         //  Suppressor = 33% less recoil
         if (suppressor_a_bool || suppressor_mac10_bool || suppressor_c_bool || suppressor_d_bool)
         {
-            player.GetComponent<NetpolygonFpsController>().vertical_float_spread = -add_ver_force / 3;
-            player.GetComponent<NetpolygonFpsController>().horizontal_float_spread = add_hor_force / 3;
+            netpolygonFpsController.vertical_float_spread = -add_ver_force / 3;
+            netpolygonFpsController.horizontal_float_spread = add_hor_force / 3;
         }
 
 

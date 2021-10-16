@@ -3,9 +3,7 @@ using Photon.Pun;
 
 public class NetpolygonFpsController : MonoBehaviourPun
 {
-
-    
-    
+    [SerializeField] float MaximumJumpHeight = 0.3f;
     public GameObject FPS_camera;
 
     public GameObject aim_point;
@@ -633,20 +631,20 @@ public class NetpolygonFpsController : MonoBehaviourPun
             
 
 
-            jump_speed = 0.3f;
+            jump_speed = MaximumJumpHeight;
 
             transform.position = transform.position + new Vector3(0, 0.1f, 0);
 
 
         }
 
-        if (!controller.isGrounded && jump)
+        if (!controller.isGrounded )
         {
 
 
             jump_speed -= 0.01f;
 
-            transform.Translate(new Vector3(0, jump_speed, 0));
+            controller.transform.Translate(new Vector3(0, jump_speed, 0));
 
 
             if (jump_speed < -0.5f)
