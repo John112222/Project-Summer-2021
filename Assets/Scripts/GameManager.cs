@@ -36,7 +36,9 @@ public class GameManager : MonoBehaviourPunCallbacks
           timertext.text=$"{timer-(Time.time-startTiming)}";
         }
     }
-
+    public static bool isplayerescaper(int viewID){
+      return main.escaperIdList.Contains(viewID);
+    }
     public static void AddPlayer(int viewID, bool isDefender)
     {
       main.photonView.RPC("RPC_AddPlayer", RpcTarget.All, viewID, isDefender);

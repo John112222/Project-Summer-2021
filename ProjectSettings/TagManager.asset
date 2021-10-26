@@ -3,12 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - eq
+  - Floor
+  - rycle
+  - Coin
+  - blood
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - ignore navmesh
   - Water
   - UI
   - 
