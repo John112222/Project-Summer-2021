@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public static class GameConfigs
+
 {
    public const int MININMUM_PLAYERS=2;
    public const int MAXIMUM_PLAYERS=4;
    public const string Temp="";
+   public const string DefenderBots = "DefenderBots";
+
+      public const string EscaperBots = "EscaperBots";
+
    public const string TeamSelection="team";
    public const string GameLevelName="Game Level";
 

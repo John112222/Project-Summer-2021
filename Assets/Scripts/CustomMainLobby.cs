@@ -34,7 +34,14 @@ using Photon.Pun;
 
         public Button StartGameButton;
         public GameObject PlayerListEntryPrefab;
+        [Header("AI Data")]
+        [SerializeField]private int numberOfEscaperbots =0;
 
+        public Text EscaperBotText;
+        [SerializeField]private int numberOfDefenderbots =0;
+                public Text DefenderBotText;
+
+        
         private Dictionary<string, RoomInfo> cachedRoomList;
         private Dictionary<string, GameObject> roomListEntries;
         private Dictionary<int, GameObject> playerListEntries;
@@ -159,7 +166,7 @@ using Photon.Pun;
             {
                 Destroy(entry.gameObject);
             }
-
+            PhotonNetwork.LocalPlayer.CustomProperties.Clear();
             playerListEntries.Clear();
             playerListEntries = null;
         }
@@ -211,10 +218,19 @@ using Photon.Pun;
                 {
                     entry.GetComponent<CustomPlayerEntry>().SetPlayerTeam(null);
                 }
+                object DefenderBots;
+                object EscaperBots;
+                if(changedProps.TryGetValue(GameConfigs.DefenderBots,out DefenderBots)){
+                    numberOfDefenderbots =(int)DefenderBots;
+                }
+                 if(changedProps.TryGetValue(GameConfigs.EscaperBots,out EscaperBots)){
+                    numberOfEscaperbots =(int)EscaperBots;
+                }
             // Debug.LogError($"Changing {entry} to {isPlayerReady}");
 
             }
-
+            Debug.Log(changedProps.ToStringFull());
+            EscaperBotText.text= $"EscaperBots {numberOfEscaperbots}";
             StartGameButton.gameObject.SetActive(CheckBalanceTeam());
             // Debug.LogError($"Players Dictionary: {playerListEntries.ToStringFull()}");
             // Debug.LogError($"There was a change in property for Player {targetPlayer.ActorNumber} with {changedProps.ToStringFull()}");
@@ -321,8 +337,8 @@ using Photon.Pun;
             {
                 return false;
             }
-            int numberOfDefenders=0;
-            int numberOfEscapers=0;
+            int numberOfDefenders=numberOfDefenderbots;
+            int numberOfEscapers=numberOfEscaperbots;
 
             foreach (Player p in PhotonNetwork.PlayerList)
             {
@@ -409,5 +425,33 @@ using Photon.Pun;
 
                 roomListEntries.Add(info.Name, entry);
             }
+        }
+        public void AddBot (bool IsDefender){
+            if(IsDefender){
+                numberOfDefenderbots++;
+            }else{
+                numberOfEscaperbots++;
+            }
+            
+                Hashtable prop=new Hashtable{
+                    {GameConfigs.DefenderBots,numberOfDefenderbots},
+                    {GameConfigs.EscaperBots,numberOfEscaperbots}
+
+                };
+                PhotonNetwork.LocalPlayer.SetCustomProperties(prop);
+        }
+        public void RemoveBot (bool IsDefender){
+            if(IsDefender){
+                numberOfDefenderbots--;
+            }else{
+                numberOfEscaperbots--;
+            }
+            
+                Hashtable prop=new Hashtable{
+                    {GameConfigs.DefenderBots,numberOfDefenderbots},
+                    {GameConfigs.EscaperBots,numberOfEscaperbots}
+
+                };
+                PhotonNetwork.LocalPlayer.SetCustomProperties(prop);
         }
     }

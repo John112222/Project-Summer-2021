@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using ExitGames.Client.Photon;
+
 public class NetworkPlayerManager : MonoBehaviourPun
 {
     private PhotonView pv;
@@ -18,6 +20,7 @@ public class NetworkPlayerManager : MonoBehaviourPun
         if(photonView.IsMine&&photonView.Owner.CustomProperties.TryGetValue(GameConfigs.TeamSelection,out TeamSelection)){
             CreatePlayerController((bool)TeamSelection);
         }
+        Debug.LogWarning(PhotonNetwork.LocalPlayer.CustomProperties.ToString());
     }
 
     private void CreatePlayerController(bool isDefender = true)
