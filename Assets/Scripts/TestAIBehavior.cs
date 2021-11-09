@@ -12,7 +12,16 @@ public class TestAIBehavior : MonoBehaviour
     void Start()
     {
         Agent = GetComponent<NavMeshAgent>();
-        if(wavepointlist1.Count >0){
+
+    }
+    public void initialize(List<GameObject>waypoints, Transform maindestination){
+         wavepointlist1 = waypoints;
+         Destination = maindestination;
+         if(Agent is null){
+             Agent = GetComponent<NavMeshAgent>();
+         }
+         Debug.LogWarning(Agent);
+         if(wavepointlist1.Count >0){
             int randomindex = Random.Range(0,wavepointlist1.Count);
             var tempdestination = wavepointlist1[randomindex];
             Debug.Log(randomindex);
@@ -21,8 +30,7 @@ public class TestAIBehavior : MonoBehaviour
         }else{
             Agent.SetDestination(Destination.position);
         }
-        GameManager.AddPlayer(GetComponent<PhotonView>().ViewID,isDefender:false);
-
+        //GameManager.AddPlayer(GetComponent<PhotonView>().ViewID,isDefender:false);
     }
     public float switchingdistance = 0.25f;
     // Update is called once per frame

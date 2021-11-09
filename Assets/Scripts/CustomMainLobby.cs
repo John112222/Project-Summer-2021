@@ -432,7 +432,8 @@ using Photon.Pun;
             }else{
                 numberOfEscaperbots++;
             }
-            
+            numberOfDefenderbots = Mathf.Clamp(numberOfDefenderbots,0, int.MaxValue);
+            numberOfEscaperbots = Mathf.Clamp(numberOfEscaperbots,0, int.MaxValue);
                 Hashtable prop=new Hashtable{
                     {GameConfigs.DefenderBots,numberOfDefenderbots},
                     {GameConfigs.EscaperBots,numberOfEscaperbots}
@@ -446,7 +447,8 @@ using Photon.Pun;
             }else{
                 numberOfEscaperbots--;
             }
-            
+                numberOfDefenderbots = Mathf.Clamp(numberOfDefenderbots,0, int.MaxValue);
+                numberOfEscaperbots = Mathf.Clamp(numberOfEscaperbots,0, int.MaxValue);
                 Hashtable prop=new Hashtable{
                     {GameConfigs.DefenderBots,numberOfDefenderbots},
                     {GameConfigs.EscaperBots,numberOfEscaperbots}
