@@ -21,7 +21,7 @@ public class MazeSpawner : MonoBehaviour {
 	public int cellrandom = 5;
 	public GameObject Floor = null;
 	public GameObject roof = null;
-	public GameObject Wall = null;
+	public GameObject[] Walls;
 	public GameObject Pillar = null;
 	public int Rows = 5;
 	public int Columns = 5;
@@ -62,7 +62,7 @@ public class MazeSpawner : MonoBehaviour {
 		foreach (Transform child in transform) children.Add(child.gameObject);
 		children.ForEach(child => DestroyImmediate(child));
 
-		transform.position = Vector3.zero;
+		//transform.position = Vector3.zero;
     }
 
 	async public void CreateMaze()
@@ -112,6 +112,7 @@ public class MazeSpawner : MonoBehaviour {
 				if((row<=CenterSizeX||row>=Rows-CenterSizeX)&&column<=Columns/2+CenterSizeZ/2&&column>=Columns/2-CenterSizeZ/2){
 					continue;
 				}
+				GameObject Wall = Walls[Random.Range(0,Walls.Length)];
 				if (cell.WallRight)
 				{
 					tmp = Instantiate(Wall, new Vector3(x + CellWidth / 2, 0, z) + Wall.transform.position, Quaternion.Euler(0, 90, 0)) as GameObject;// right
