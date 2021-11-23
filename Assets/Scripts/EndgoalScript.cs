@@ -7,10 +7,14 @@ public class EndgoalScript : MonoBehaviourPunCallbacks
 {
     void OnTriggerEnter(Collider other){
         object IsPlayerDefender = null;
-        if(other.GetComponent<PhotonView>()?.Owner.CustomProperties.TryGetValue(GameConfigs.TeamSelection, out IsPlayerDefender)??false|| GameManager.isplayerescaper(other.GetComponent<PhotonView>()?.ViewID??-1)){
+        if(other.GetComponent<PhotonView>()?.Owner.CustomProperties.TryGetValue(GameConfigs.TeamSelection, out IsPlayerDefender)??false){
             if((bool)IsPlayerDefender == false){
                 photonView.RPC("RPC_Escapers_Win", RpcTarget.All);
             }
+        }
+        if(GameManager.isplayerescaper(other.GetComponent<PhotonView>()?.ViewID??-1))
+        {
+            photonView.RPC("RPC_Escapers_Win", RpcTarget.All);
         }
     }
     //IEnumerator

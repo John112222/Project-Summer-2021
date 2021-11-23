@@ -39,6 +39,10 @@ public class GameManager : MonoBehaviourPunCallbacks
     public static bool isplayerescaper(int viewID){
       return main.escaperIdList.Contains(viewID);
     }
+
+    public static bool isplayerdefender(int viewID){
+      return main.defenderIdList.Contains(viewID);
+    }
     public static void AddPlayer(int viewID, bool isDefender)
     {
       main.photonView.RPC("RPC_AddPlayer", RpcTarget.All, viewID, isDefender);

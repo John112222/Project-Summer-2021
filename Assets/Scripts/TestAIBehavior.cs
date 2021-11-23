@@ -20,11 +20,11 @@ public class TestAIBehavior : MonoBehaviour
          if(Agent is null){
              Agent = GetComponent<NavMeshAgent>();
          }
-         Debug.LogWarning(Agent);
+        //  Debug.LogWarning(Agent);
          if(wavepointlist1.Count >0){
             int randomindex = Random.Range(0,wavepointlist1.Count);
             var tempdestination = wavepointlist1[randomindex];
-            Debug.Log(randomindex);
+            // Debug.Log(randomindex);
             Agent.SetDestination(tempdestination.transform.position);
             
         }else{

@@ -39,7 +39,8 @@ using Photon.Pun;
 
         public Text EscaperBotText;
         [SerializeField]private int numberOfDefenderbots =0;
-                public Text DefenderBotText;
+        public Text DefenderBotText;
+        public GameObject[] MasterClientOnlyObjects;
 
         
         private Dictionary<string, RoomInfo> cachedRoomList;
@@ -123,6 +124,11 @@ using Photon.Pun;
 
 
             SetActivePanel(InsideRoomPanel.name);
+
+            foreach (GameObject item in MasterClientOnlyObjects)
+            {
+                item.SetActive(PhotonNetwork.IsMasterClient);
+            }
 
             if (playerListEntries == null)
             {
@@ -229,11 +235,17 @@ using Photon.Pun;
             // Debug.LogError($"Changing {entry} to {isPlayerReady}");
 
             }
-            Debug.Log(changedProps.ToStringFull());
-            EscaperBotText.text= $"EscaperBots {numberOfEscaperbots}";
+            //Debug.Log(changedProps.ToStringFull());
+            UpdateText();
             StartGameButton.gameObject.SetActive(CheckBalanceTeam());
             // Debug.LogError($"Players Dictionary: {playerListEntries.ToStringFull()}");
             // Debug.LogError($"There was a change in property for Player {targetPlayer.ActorNumber} with {changedProps.ToStringFull()}");
+        }
+
+        public void UpdateText()
+        {
+            EscaperBotText.text = $"Escaper Bots {numberOfEscaperbots}";
+            DefenderBotText.text = $"Defender Bots {numberOfDefenderbots}";
         }
 
         public override void OnDisconnected (DisconnectCause cause)
