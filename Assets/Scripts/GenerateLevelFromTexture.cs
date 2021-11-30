@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using Photon.Pun;
 
-public class GenerateLevelFromTexture : MonoBehaviour
+public class GenerateLevelFromTexture : MonoBehaviourPun
 {
     public enum MazeGenerationAlgorithm{
 		PureRecursive,
@@ -35,7 +36,7 @@ public class GenerateLevelFromTexture : MonoBehaviour
 
     void Start()
     {
-        RunGenerator();
+        //RunGenerator();
     }
 
 	public void RunGenerator()
@@ -90,56 +91,84 @@ public class GenerateLevelFromTexture : MonoBehaviour
     }
 
     public void GenerateTextures()
-	{
-		groundTexture = new Texture2D(Columns*CellSize+1, Rows*CellSize+1, TextureFormat.RGBA32, false);
-		wallTexture = new Texture2D(Columns*CellSize+1, Rows*CellSize+1, TextureFormat.RGBA32, false);
-		for (int i = 0; i < groundTexture.width; i++)
+    {
+        groundTexture = new Texture2D(Columns * CellSize + 1, Rows * CellSize + 1, TextureFormat.RGBA32, false);
+        wallTexture = new Texture2D(Columns * CellSize + 1, Rows * CellSize + 1, TextureFormat.RGBA32, false);
+        GenerateDefaultGround();
+        GeneratingWall();
+        groundTexture.Apply();
+        wallTexture.Apply();
+    }
+	//private void placerandomobjects(){
+
+	//}
+
+    private void GeneratingWall()
+    {
+        for (int row = 0; row < Rows; row++)
+        {
+            for (int column = 0; column < Columns; column++)
+            {
+                SetCellTexture(row, column);
+            }
+        }
+    }
+
+    private void GenerateDefaultGround()
+    {
+        for (int i = 0; i < groundTexture.width; i++)
         {
             for (int j = 0; j < groundTexture.height; j++)
             {
-				groundTexture.SetPixel(i,j,Color.black);
-			}
-		}
-		for (int row = 0; row < Rows; row++)
-		{
-			for (int column = 0; column < Columns; column++)
-			{
-				SetCellTexture(row, column);
-			}
-		}
-		groundTexture.Apply();
-		wallTexture.Apply();
-	}
+                groundTexture.SetPixel(i, j, Color.black);
+            }
+        }
+    }
 
+    public int cellrandom = 0;
+	public int CenterSizeX = 0;
+	public int CenterSizeZ = 0;
+
+	public List<Color> index2color = new List<Color>();
 	private void SetCellTexture(int row, int column)
 	{
 		var cell = mMazeGenerator.GetMazeCell(row, column);
+		if(cell.randomint<cellrandom)return;
+		
+		if((row<=CenterSizeX||row>=Rows-CenterSizeX)&&column<=Columns/2+CenterSizeZ/2&&column>=Columns/2-CenterSizeZ/2){
+			return;
+		}
+		Color wallcolor = Color.black;
+		if(cell.randomint<index2color.Count){
+			wallcolor = index2color[cell.randomint];
+		}
+
 		if(cell.WallLeft)
 		{
 			for(int lineX = 0; lineX <= CellSize; lineX++)
 			{
-				wallTexture.SetPixel(column*CellSize, row*CellSize + lineX, Color.black);
+				wallTexture.SetPixel(column*CellSize, row*CellSize + lineX, wallcolor);
 			}
 		}
 		if(cell.WallBack)
 		{
 			for(int lineY = 0; lineY <= CellSize; lineY++)
 			{
-				wallTexture.SetPixel(column*CellSize + lineY, row*CellSize, Color.black);
+				wallTexture.SetPixel(column*CellSize + lineY, row*CellSize, wallcolor);
 			}
 		}
 		if(cell.WallRight && column == Columns-1)
 		{
 			for(int lineX = 0; lineX <= CellSize; lineX++)
 			{
-				wallTexture.SetPixel(column*CellSize + CellSize, row*CellSize + lineX, Color.black);
+				wallTexture.SetPixel(column*CellSize + CellSize, row*CellSize + lineX, wallcolor);
 			}
 		}
 		if(cell.WallFront && row == Rows-1)
 		{
 			for(int lineY = 0; lineY <= CellSize; lineY++)
 			{
-				wallTexture.SetPixel(column*CellSize + lineY, row*CellSize + CellSize, Color.black);
+				wallTexture.SetPixel(column*CellSize + lineY, row*CellSize + CellSize, wallcolor);
 			}
 		}
 	}
