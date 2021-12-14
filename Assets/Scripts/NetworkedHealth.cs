@@ -26,6 +26,7 @@ public class NetworkedHealth : MonoBehaviourPun
     [PunRPC]
     public void RPC_TakeDamage(float damage)
     {
+        Debug.Log($"{this.gameObject.name} is taking {damage} damage");
         if(!photonView.IsMine) return;
 
 

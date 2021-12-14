@@ -2366,7 +2366,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &601871828
 MonoBehaviour:
@@ -3970,7 +3970,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Add Escaper Bot
+  m_Text: Add Defender Bot
 --- !u!222 &1034483393
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6483,7 +6483,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1832946909}
         m_TargetAssemblyTypeName: CustomMainLobby, Assembly-CSharp
-        m_MethodName: AddBot
+        m_MethodName: RemoveBot
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6491,7 +6491,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &2003177050
 MonoBehaviour:

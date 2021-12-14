@@ -29,7 +29,7 @@ public class BotsSpawning : MonoBehaviourPun
             for (int i = 0; i < (int)NumberOfBots; i++)
             {
                 var AIplayers = PhotonNetwork.Instantiate(prefabName, spawnerManager.Randomspawnpoints(isDefender).position, Quaternion.identity);
-                AIplayers.GetComponent<TestAIBehavior>().initialize(DefaultWayPoint, EscaperDestination.transform);
+                AIplayers.GetComponent<TestAIBehavior>()?.initialize(DefaultWayPoint, EscaperDestination.transform);
                 GameManager.AddPlayer(AIplayers.GetComponent<PhotonView>().ViewID, isDefender);
             }
         }
