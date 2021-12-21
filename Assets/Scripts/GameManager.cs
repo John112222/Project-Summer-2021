@@ -124,10 +124,13 @@ public class GameManager : MonoBehaviourPunCallbacks
   {
     gameStopped = true;
   }
-  [PunRPC]
   public void ResetGame(){
     if(PhotonNetwork.IsMasterClient){
-      PhotonNetwork.LoadLevel(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+      this.photonView.RPC(nameof(RPC_resetgame), RpcTarget.All);
     }
+  }
+  [PunRPC]
+  public void RPC_resetgame(){
+    PhotonNetwork.LoadLevel(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
   }
 }

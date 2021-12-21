@@ -1,8 +1,8 @@
-﻿using UnityEditor;
+using UnityEditor;
 using UnityEngine;
 
 [CustomEditor(typeof(MazeSpawner))]
-public class MazeInspectorEditor : Editor
+public class MazeInspectorEditor :  Editor
 {
     public override void OnInspectorGUI()
     {
