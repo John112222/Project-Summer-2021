@@ -349,6 +349,9 @@ using Photon.Pun;
             {
                 return false;
             }
+            if(PhotonNetwork.PlayerList.Length < 2 ){
+                return true;
+            }
             int numberOfDefenders=numberOfDefenderbots;
             int numberOfEscapers=numberOfEscaperbots;
 
@@ -369,7 +372,7 @@ using Photon.Pun;
                     return false;
                 }
             }
-
+            
             return numberOfDefenders==numberOfEscapers&&numberOfDefenders>0;
         }
         

@@ -24,17 +24,13 @@ public class NetworkedShooting : MonoBehaviourPun
         //}
     }
 
-    public void Shoot(int dmg=0)
+    public void Shoot(RaycastHit RCHit, int dmg=0)
     {
         if(!photonView.IsMine || playerCamera == null) return;
 
 
-        Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f,0.5f));
-        ray.origin = playerCamera.transform.position;
-        if(Physics.Raycast(ray, out RaycastHit hit))
-        {
-            Debug.Log($"We hit {hit.collider.gameObject.name}");
-            hit.collider.GetComponent<NetworkedHealth>()?.TakeDamage(dmg==0?damage:dmg);
-        }
+    
+            Debug.Log($"We hit {RCHit.collider.gameObject.name}");
+            RCHit.collider.GetComponent<NetworkedHealth>()?.TakeDamage(dmg==0?damage:dmg);
     }
 }
