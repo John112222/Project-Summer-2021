@@ -14,7 +14,12 @@ public class AiModelAnimationController : MonoBehaviour
     private const string LEGS_INT = "legs";
 
     private const string SPEED_FLOAT = "legs_speed";
-
+    public enum LegType{
+        IDLE = 0,
+        WALKING,
+        TURNING,
+        RUNNING
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -27,13 +32,23 @@ public class AiModelAnimationController : MonoBehaviour
     void Update()
     {
         Debug.Log($"desire velocity = {Agent.desiredVelocity}");
-        if(Agent.speed > 0 ){
-            animator.SetInteger(LEGS_INT, Agent.speed > minrunspeed? 3:1);
-            animator.SetFloat(SPEED_FLOAT, Agent.speed);
+        if(Mathf.Abs(Agent.speed) > 0 ){
+            if(Mathf.Abs(Agent.angularSpeed) > 0){
+            AnimatorSetValue((int)LegType.TURNING,Agent.speed);
+            }else{
+            AnimatorSetValue((int)(Agent.speed > minrunspeed?LegType.RUNNING:LegType.WALKING),Agent.speed);
+            }
 
-        }else{
-            animator.SetInteger(LEGS_INT, 0);
-            animator.SetFloat(SPEED_FLOAT, Agent.speed);
+
+        }else
+        {
+            AnimatorSetValue((int)LegType.IDLE,Agent.speed);
         }
+    }
+
+    private void AnimatorSetValue(int legtype, float agentspeed)
+    {
+        animator.SetInteger(LEGS_INT, legtype);
+        animator.SetFloat(SPEED_FLOAT, agentspeed);
     }
 }
