@@ -7,6 +7,11 @@ public class AIfieldofview : MonoBehaviour
 {
     [SerializeField]
     List<TargetInfo> targetlist = new List<TargetInfo>();
+    public List <TargetInfo> Targetlist{
+        get{
+            return targetlist;
+        }
+    }
     [System.Serializable]public class FovEvent: UnityEvent<GameObject>{
 
     }
@@ -23,11 +28,12 @@ public class AIfieldofview : MonoBehaviour
             var target = targetlist[i];
             Vector3 heading = target.target.transform.position- RaycastStart.position;
             if(Physics.Raycast(RaycastStart.position,heading.normalized,out var hitcast,heading.sqrMagnitude)){
-                if(hitcast.rigidbody.gameObject==target.target){
+                /*if(hitcast.rigidbody.transform.root.gameObject==target.target){
                     target.isvisible = true;
                 }else{
                     target.isvisible = false;
-                }
+                }*/
+                target.isvisible=hitcast.rigidbody.transform.root.gameObject==target.target; 
             } 
             targetlist[i]=target;
         }
@@ -43,7 +49,7 @@ public class AIfieldofview : MonoBehaviour
                 target.targetcount += 1;
                 targetlist[targetindex]= target;
             }
-            OnTargetEnter?.Invoke(Other.gameObject);
+            OnTargetEnter?.Invoke(Other.transform.root.gameObject);
         }
     }
      private void OnTriggerExit(Collider Other){
@@ -58,7 +64,7 @@ public class AIfieldofview : MonoBehaviour
                     targetlist[targetindex]= target;
                 }
              }
-            OnTargetExit?.Invoke(Other.gameObject);
+            OnTargetExit?.Invoke(Other.transform.root.gameObject);
         }
     }
     public void DebugMessage(GameObject target){

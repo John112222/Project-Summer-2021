@@ -43,6 +43,10 @@ public class GameManager : MonoBehaviourPunCallbacks
     public static bool isplayerdefender(int viewID){
       return main.defenderIdList.Contains(viewID);
     }
+    public static bool isonsameteam(int myviewid, int Otherviewid){
+      return
+        isplayerescaper(myviewid)==isplayerescaper(Otherviewid)&& isplayerdefender(myviewid)==isplayerdefender(Otherviewid);
+    }
     public static void AddPlayer(int viewID, bool isDefender)
     {
       main.photonView.RPC("RPC_AddPlayer", RpcTarget.All, viewID, isDefender);
