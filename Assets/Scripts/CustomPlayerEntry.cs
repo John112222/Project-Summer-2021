@@ -13,6 +13,7 @@ public class CustomPlayerEntry : MonoBehaviour
         //public Image PlayerColorImage;
         public Button DefenderButton;
         public Button EscaperButton;
+        public GameObject roleisdropdown;
         public Image PlayerTeamImage;
 
         private int ownerId;
@@ -38,6 +39,7 @@ public class CustomPlayerEntry : MonoBehaviour
             {
                 DefenderButton.gameObject.SetActive(false);
                 EscaperButton.gameObject.SetActive(false);
+                roleisdropdown.SetActive (false);
                 return;
             }
             Hashtable initialProps = new Hashtable() {{GameConfigs.TeamSelection, null}};

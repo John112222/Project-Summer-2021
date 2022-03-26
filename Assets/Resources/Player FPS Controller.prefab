@@ -5901,7 +5901,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 495c9e2a934bcc640a8d7427b13cb680, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5941,7 +5941,7 @@ TextMesh:
   m_FontSize: 150
   m_FontStyle: 1
   m_RichText: 1
-  m_Font: {fileID: 0}
+  m_Font: {fileID: 12800000, guid: 495c9e2a934bcc640a8d7427b13cb680, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4278193663
@@ -25192,7 +25192,7 @@ GameObject:
   - component: {fileID: 2567749744886177406}
   - component: {fileID: 8132389789445135166}
   m_Layer: 0
-  m_Name: charakters
+  m_Name: characters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27642,7 +27642,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 495c9e2a934bcc640a8d7427b13cb680, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -27682,7 +27682,7 @@ TextMesh:
   m_FontSize: 150
   m_FontStyle: 3
   m_RichText: 1
-  m_Font: {fileID: 0}
+  m_Font: {fileID: 12800000, guid: 495c9e2a934bcc640a8d7427b13cb680, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4278240767

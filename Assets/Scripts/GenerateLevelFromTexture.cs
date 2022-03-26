@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 using Photon.Pun;
 
 public class GenerateLevelFromTexture : MonoBehaviourPun
@@ -211,23 +210,6 @@ public class GenerateLevelFromTexture : MonoBehaviourPun
          UnityEditor.AssetDatabase.Refresh();
  #endif
      }
-}
-
-[CustomEditor(typeof(GenerateLevelFromTexture))]
-public class GenerateLevelFromTextureEditor : Editor {
-	public override void OnInspectorGUI() {
-		DrawDefaultInspector();
-		GenerateLevelFromTexture spawner = (GenerateLevelFromTexture)target;
-		if (GUILayout.Button("Generate"))
-        {
-            spawner.RunGenerator();
-        }
-		if (GUILayout.Button("Delete"))
-        {
-            spawner.ResetMaze();
-        }
-		
-	}
 }
 
 [System.Serializable]
