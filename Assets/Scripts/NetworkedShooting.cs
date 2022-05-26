@@ -26,11 +26,12 @@ public class NetworkedShooting : MonoBehaviourPun
 
     public void Shoot(RaycastHit RCHit, int dmg=0)
     {
+        Debug.Log($"We {this.gameObject} hit {RCHit.collider.gameObject.name}");
         if(!photonView.IsMine || playerCamera == null) return;
 
 
     
-            Debug.Log($"We hit {RCHit.collider.gameObject.name}");
+            
             RCHit.collider.GetComponent<NetworkedHealth>()?.TakeDamage(dmg==0?damage:dmg);
     }
 }

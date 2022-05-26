@@ -30,7 +30,7 @@ public class AIFiring : MonoBehaviour
     {
         foreach (var targets in fov.Targetlist)
      {
-         if(targets.target.CompareTag("Player")&&targets.isvisible&&targets.target.GetComponent<PhotonView>()is PhotonView pv){
+         if(targets.target&&targets.target.CompareTag("Player")&&targets.isvisible&&targets.target.GetComponent<PhotonView>()is PhotonView pv){
              int Otherviewid = pv.ViewID;
              Debug.LogWarning($"otherid：{Otherviewid}");
              if(!GameManager.isonsameteam(myviewid,Otherviewid)){

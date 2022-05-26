@@ -33,7 +33,9 @@ public class AIfieldofview : MonoBehaviour
                 }else{
                     target.isvisible = false;
                 }*/
-                target.isvisible= target.target? hitcast.rigidbody.transform.root.gameObject==target.target:false; 
+                var temp = hitcast.rigidbody.transform.root.gameObject;
+                Debug.LogWarning(temp);
+                target.isvisible= target.target? temp==target.target:false; 
             } 
             targetlist[i]=target;
         }
