@@ -7,6 +7,8 @@ using Photon.Pun;
 
 public class AIFiring : MonoBehaviour
 {
+    [SerializeField] private int fireRate = 1;
+
     // Start is called before the first frame update
     [SerializeField]NavMeshAgent agent;
     [SerializeField]AIfieldofview fov;
@@ -32,9 +34,9 @@ public class AIFiring : MonoBehaviour
      {
          if(targets.target&&targets.target.CompareTag("Player")&&targets.isvisible&&targets.target.GetComponent<PhotonView>()is PhotonView pv){
              int Otherviewid = pv.ViewID;
-             Debug.LogWarning($"otherid：{Otherviewid}");
+             Debug.LogWarning($"otherid: {Otherviewid}");
              if(!GameManager.isonsameteam(myviewid,Otherviewid)){
-                 Debug.LogWarning("shooting player");
+                 Debug.LogError($"shooting player: {myviewid} -> {Otherviewid}");
                  StartCoroutine(ShootEnemy(targets.target));
 
              }
@@ -48,7 +50,7 @@ public class AIFiring : MonoBehaviour
             weapon.Shoot(hit);
             isoncooldown=true;
         }
-        if(isoncooldown)yield return new WaitForSeconds(1);
+        if(isoncooldown)yield return new WaitForSeconds(fireRate);
         isoncooldown=false;
     }
 }

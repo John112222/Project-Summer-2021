@@ -23,9 +23,11 @@ public class AIfieldofview : MonoBehaviour
 
         //Check all targets and in target lists
         //Switch them to targets visible if the agent can see it
+        targetlist.RemoveAll(item => item.target == null);
         for(int i = 0;i<targetlist.Count;i++)
         {
             var target = targetlist[i];
+            if(target.target == null) continue;
             Vector3 heading = target.target.transform.position- RaycastStart.position;
             if(Physics.Raycast(RaycastStart.position,heading.normalized,out var hitcast,heading.sqrMagnitude)){
                 /*if(hitcast.rigidbody.transform.root.gameObject==target.target){
@@ -33,6 +35,10 @@ public class AIfieldofview : MonoBehaviour
                 }else{
                     target.isvisible = false;
                 }*/
+                if(hitcast.rigidbody == null) {
+                    // Debug.LogError("Rigidbody is null!");
+                    continue;
+                }
                 var temp = hitcast.rigidbody.transform.root.gameObject;
                 Debug.LogWarning(temp);
                 target.isvisible= target.target? temp==target.target:false; 

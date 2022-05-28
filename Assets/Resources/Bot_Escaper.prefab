@@ -217,6 +217,7 @@ Transform:
   - {fileID: 3079289242429795621}
   - {fileID: 1921153427937728566}
   - {fileID: 5902876988958084079}
+  - {fileID: 4094444130475944878}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -838,7 +839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recyle_particles_performance: {fileID: 0}
-  shoot_handle: {fileID: 0}
+  shoot_handle: {fileID: 8025040966288528340}
   player: {fileID: 0}
   _3rd_view: 0
   _3rd_view_cam: {x: 0.00457, y: 0.00899, z: 0.0062}
@@ -860,7 +861,7 @@ MonoBehaviour:
   reload_unempty: {fileID: 8300000, guid: 2acaed2e9cc9dbd41ad038d82775adfa, type: 3}
   reload_empty: {fileID: 8300000, guid: c60953862b92d8e4d96e7f4a04670036, type: 3}
   Clip_on_point: {fileID: 842647149582474905, guid: dd9cfba581d957948a7fc62fbabfc5e0, type: 3}
-  Cam: {fileID: 0}
+  Cam: {fileID: 8792875057971150561}
   ani: {fileID: 5902876988958084064}
   idle_cam: {x: 0.00055, y: -0.001147, z: 0.003914}
   aim_cam: {x: 0.00128, y: -0.00178, z: 0.004336}
@@ -28349,6 +28350,53 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &8025040966288528340
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4094444130475944878}
+  - component: {fileID: 6275442145687288612}
+  m_Layer: 0
+  m_Name: Shoot Handle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4094444130475944878
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8025040966288528340}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 11, y: 0, z: 28.964}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3079289242479891191}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6275442145687288612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8025040966288528340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9e9d6e16d27aed4c96ee1cde85536a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recyle_particles_performance: {fileID: 0}
+  OnShoot:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8792875057971150561
 GameObject:
   m_ObjectHideFlags: 0

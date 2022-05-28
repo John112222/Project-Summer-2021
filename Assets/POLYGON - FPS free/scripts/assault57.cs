@@ -11,8 +11,7 @@ public class assault57 : MonoBehaviour
     public GameObject shoot_handle;
     public void Start()
     {
-
-        shoot_handle = player.GetComponent<polygon_fps_controller>().shoot_handle;
+        if (player) shoot_handle = player.GetComponent<polygon_fps_controller>().shoot_handle;
 
         change_equipment();
         recyle_particles_performance = GameObject.FindGameObjectWithTag("rycle");
@@ -21,7 +20,7 @@ public class assault57 : MonoBehaviour
 
 
         ani.SetInteger("assault57", 0);
-        _3rd_view = player.GetComponent<polygon_fps_controller>()._3rd;
+        _3rd_view = player ? player.GetComponent<polygon_fps_controller>()._3rd : false;
 
 
 
@@ -54,12 +53,14 @@ public class assault57 : MonoBehaviour
         Input_Status();
 
         // Input from the main player
-        running = player.GetComponent<polygon_fps_controller>().running;
-        walking = player.GetComponent<polygon_fps_controller>().walking;
-        walking_side = player.GetComponent<polygon_fps_controller>().walking_side;
-        duck_walk = player.GetComponent<polygon_fps_controller>().duck_walk;
-        reload = player.GetComponent<polygon_fps_controller>().reload;
-        cam_toggled = player.GetComponent<polygon_fps_controller>().cam_toggled;
+        if(player){
+            running = player.GetComponent<polygon_fps_controller>().running;
+            walking = player.GetComponent<polygon_fps_controller>().walking;
+            walking_side = player.GetComponent<polygon_fps_controller>().walking_side;
+            duck_walk = player.GetComponent<polygon_fps_controller>().duck_walk;
+            reload = player.GetComponent<polygon_fps_controller>().reload;
+            cam_toggled = player.GetComponent<polygon_fps_controller>().cam_toggled;
+        }
 
         // push force, which pushes the shoot animation back.
 
@@ -215,14 +216,18 @@ public class assault57 : MonoBehaviour
         if (cam_toggled)
         {
             _3rd_view = true;
-            player.GetComponent<polygon_fps_controller>()._3rd = false;
-            player.GetComponent<polygon_fps_controller>().head_3rd_status();
+            if(player){
+                player.GetComponent<polygon_fps_controller>()._3rd = false;
+                player.GetComponent<polygon_fps_controller>().head_3rd_status();
+            }
         }
         else
         {
             _3rd_view = false;
-            player.GetComponent<polygon_fps_controller>()._3rd = true;
-            player.GetComponent<polygon_fps_controller>().head_3rd_status();
+            if(player){
+                player.GetComponent<polygon_fps_controller>()._3rd = true;
+                player.GetComponent<polygon_fps_controller>().head_3rd_status();
+            }
         }
 
 
@@ -334,16 +339,20 @@ public class assault57 : MonoBehaviour
         // full recoil
         if (!suppressor_a_bool && !suppressor_mac10_bool && !suppressor_c_bool && !suppressor_d_bool)
         {
-            player.GetComponent<polygon_fps_controller>().vertical_float_spread = -add_ver_force;
-            player.GetComponent<polygon_fps_controller>().horizontal_float_spread = add_hor_force;
+            if(player){
+                player.GetComponent<polygon_fps_controller>().vertical_float_spread = -add_ver_force;
+                player.GetComponent<polygon_fps_controller>().horizontal_float_spread = add_hor_force;
+            }
         }
 
 
         //  Suppressor = 33% less recoil
         if (suppressor_a_bool || suppressor_mac10_bool || suppressor_c_bool || suppressor_d_bool)
         {
-            player.GetComponent<polygon_fps_controller>().vertical_float_spread = -add_ver_force / 3;
-            player.GetComponent<polygon_fps_controller>().horizontal_float_spread = add_hor_force / 3;
+            if(player){
+                player.GetComponent<polygon_fps_controller>().vertical_float_spread = -add_ver_force / 3;
+                player.GetComponent<polygon_fps_controller>().horizontal_float_spread = add_hor_force / 3;
+            }
         }
 
 
