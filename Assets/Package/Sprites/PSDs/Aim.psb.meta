@@ -98,8 +98,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 135
-      y: 4
+      x: 50
+      y: 27
       width: 100
       height: 15
     spriteID: ef363290273144613a64704eb72ae11d
@@ -111,7 +111,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 85, y: -236}
+    uvTransform: {x: 0, y: -213}
   - name: Focus Bottom
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -119,8 +119,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 112
+      x: 27
+      y: 4
       width: 15
       height: 100
     spriteID: 9f0965bf547044418b73067a4b66ebcb
@@ -132,7 +132,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -239, y: 62}
+    uvTransform: {x: -216, y: -46}
   - name: Focus Top
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -161,7 +161,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 27
+      x: 50
       y: 4
       width: 100
       height: 15
@@ -174,7 +174,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -323, y: -234}
+    uvTransform: {x: -300, y: -234}
   - name: Point
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -182,8 +182,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 27
-      y: 27
+      x: 50
+      y: 50
       width: 20
       height: 20
     spriteID: 2c46b3d9f4a254ca08d70e313b7358c4
@@ -195,7 +195,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -213, y: -213}
+    uvTransform: {x: -190, y: -190}
   characterData:
     bones: []
     parts: []
@@ -252,7 +252,7 @@ ScriptedImporter:
     parentIndex: 0
     spriteID: 9f0965bf547044418b73067a4b66ebcb
     layerID: 39
-    mosaicPosition: {x: 4, y: 112}
+    mosaicPosition: {x: 27, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -262,7 +262,7 @@ ScriptedImporter:
     parentIndex: 0
     spriteID: 115cbaa3a06d547259d4d298ca25863c
     layerID: 5
-    mosaicPosition: {x: 27, y: 4}
+    mosaicPosition: {x: 50, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -272,7 +272,7 @@ ScriptedImporter:
     parentIndex: 0
     spriteID: ef363290273144613a64704eb72ae11d
     layerID: 36
-    mosaicPosition: {x: 135, y: 4}
+    mosaicPosition: {x: 50, y: 27}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -292,7 +292,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 2c46b3d9f4a254ca08d70e313b7358c4
     layerID: 33
-    mosaicPosition: {x: 27, y: 27}
+    mosaicPosition: {x: 50, y: 50}
     flatten: 0
     isImported: 1
     isVisible: 1
