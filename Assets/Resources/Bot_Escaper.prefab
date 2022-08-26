@@ -426,7 +426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 3079289242479891187}
-  fov: {fileID: 0}
+  fov: {fileID: 2119781069574109386}
 --- !u!81 &8006196570589991583
 AudioListener:
   m_ObjectHideFlags: 0

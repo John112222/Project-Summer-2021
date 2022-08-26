@@ -10,11 +10,11 @@ public class PlayerSpawnerManager : MonoBehaviourPunCallbacks
     public GameObject Networkcopyprefab;
     // public static PlayerSpawnerManager instance;
 
-    public List<Transform> defenderSpawnPoints = new List<Transform>();
-    public List<Transform> escaperSpawnPoints = new List<Transform>();
+    public Transform[] defenderSpawnPoints;
+    public Transform[] escaperSpawnPoints;
     // Start is called before the first frame update
 
-    private void Awake() 
+    private void Awake()
     {
         // if(instance)
         // {
@@ -40,11 +40,15 @@ public class PlayerSpawnerManager : MonoBehaviourPunCallbacks
     //     Destroy(instance.gameObject);
     // }
 
-    public Transform Randomspawnpoints(bool isDefender){
-        if(isDefender){
-            return defenderSpawnPoints[0];
-        }else{
-            return escaperSpawnPoints[0];
+    public Transform Randomspawnpoints(bool isDefender)
+    {
+        if (isDefender)
+        {
+            return defenderSpawnPoints[Random.Range(0, defenderSpawnPoints.Length)];
+        }
+        else
+        {
+            return escaperSpawnPoints[Random.Range(0, escaperSpawnPoints.Length)];
         }
     }
 
@@ -70,7 +74,7 @@ public class PlayerSpawnerManager : MonoBehaviourPunCallbacks
         //     Debug.LogError("Missing Player Prefab");
         //     return;
         // }
-        
+
         // GameObject Player=PhotonNetwork.Instantiate(this.playerprefab.name,Vector3.zero,Quaternion.identity,0);
         // Player.GetComponent<MeshRenderer>().material.color=Photon.Pun.Demo.Asteroids.AsteroidsGame.GetColor(photonView.Owner.ActorNumber);
         // Player.name=$"player:{photonView.Owner.ActorNumber}";

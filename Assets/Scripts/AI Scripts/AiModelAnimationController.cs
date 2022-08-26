@@ -6,15 +6,16 @@ using UnityEngine;
 
 public class AiModelAnimationController : MonoBehaviour
 {
-    [SerializeField]private NavMeshAgent Agent;
-    [SerializeField]private Animator animator; 
+    [SerializeField] private NavMeshAgent Agent;
+    [SerializeField] private Animator animator;
 
-    [SerializeField]float minrunspeed = 2; 
+    [SerializeField] float minrunspeed = 2;
 
     private const string LEGS_INT = "legs";
 
     private const string SPEED_FLOAT = "legs_speed";
-    public enum LegType{
+    public enum LegType
+    {
         IDLE = 0,
         WALKING,
         TURNING,
@@ -31,18 +32,23 @@ public class AiModelAnimationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log($"desire velocity = {Agent.desiredVelocity}");
-        if(Mathf.Abs(Agent.speed) > 0 ){
-            if(Mathf.Abs(Agent.angularSpeed) > 0){
-            AnimatorSetValue((int)LegType.TURNING,Agent.speed);
-            }else{
-            AnimatorSetValue((int)(Agent.speed > minrunspeed?LegType.RUNNING:LegType.WALKING),Agent.speed);
+        // Debug.Log($"desire velocity = {Agent.desiredVelocity}");
+        if (Mathf.Abs(Agent.speed) > 0)
+        {
+            if (Mathf.Abs(Agent.angularSpeed) > 0)
+            {
+                AnimatorSetValue((int)LegType.TURNING, Agent.speed);
+            }
+            else
+            {
+                AnimatorSetValue((int)(Agent.speed > minrunspeed ? LegType.RUNNING : LegType.WALKING), Agent.speed);
             }
 
 
-        }else
+        }
+        else
         {
-            AnimatorSetValue((int)LegType.IDLE,Agent.speed);
+            AnimatorSetValue((int)LegType.IDLE, Agent.speed);
         }
     }
 

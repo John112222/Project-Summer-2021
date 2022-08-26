@@ -18652,6 +18652,7 @@ GameObject:
   - component: {fileID: 5429404026350318290}
   - component: {fileID: 7008240892951220831}
   - component: {fileID: 3878567650788717389}
+  - component: {fileID: 207239926209408108}
   m_Layer: 0
   m_Name: Defender Bot
   m_TagString: Player
@@ -18895,6 +18896,21 @@ MonoBehaviour:
   agent: {fileID: 7258216765479637317}
   fov: {fileID: 7295777492838315860}
   weapon_handler: {fileID: 2278817835513254017}
+--- !u!114 &207239926209408108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7258216765479637320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a81281e2893b4776a084cc74beaba67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 7258216765479637317}
+  fov: {fileID: 7295777492838315860}
+  randomWalking: {fileID: 7510071116832404143}
 --- !u!1 &7258216766230473858
 GameObject:
   m_ObjectHideFlags: 0
