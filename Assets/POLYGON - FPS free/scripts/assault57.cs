@@ -9,13 +9,14 @@ public class assault57 : MonoBehaviour
 
     public GameObject recyle_particles_performance;
     public GameObject shoot_handle;
+    public bool isRegularPlayer = false;
     public void Start()
     {
         if (player) shoot_handle = player.GetComponent<polygon_fps_controller>().shoot_handle;
 
         change_equipment();
         recyle_particles_performance = GameObject.FindGameObjectWithTag("rycle");
-        
+
 
 
 
@@ -49,11 +50,11 @@ public class assault57 : MonoBehaviour
 
     void Update()
     {
-        
         Input_Status();
 
         // Input from the main player
-        if(player){
+        if (player)
+        {
             running = player.GetComponent<polygon_fps_controller>().running;
             walking = player.GetComponent<polygon_fps_controller>().walking;
             walking_side = player.GetComponent<polygon_fps_controller>().walking_side;
@@ -75,7 +76,7 @@ public class assault57 : MonoBehaviour
             Power_bolt = -1;
         }
 
-       
+
 
         ani.SetFloat("Power_bolt", Power_bolt);
 
@@ -121,7 +122,7 @@ public class assault57 : MonoBehaviour
 
             if (!button_aim)
             {
-               // idle walk
+                // idle walk
 
                 ani.SetInteger("assault57", 2);
 
@@ -201,8 +202,7 @@ public class assault57 : MonoBehaviour
 
     public void Input_Status()
     {
-
-
+        if (!isRegularPlayer) return;
 
         if (Input.GetButton("Fire1"))
         {
@@ -216,7 +216,8 @@ public class assault57 : MonoBehaviour
         if (cam_toggled)
         {
             _3rd_view = true;
-            if(player){
+            if (player)
+            {
                 player.GetComponent<polygon_fps_controller>()._3rd = false;
                 player.GetComponent<polygon_fps_controller>().head_3rd_status();
             }
@@ -224,7 +225,8 @@ public class assault57 : MonoBehaviour
         else
         {
             _3rd_view = false;
-            if(player){
+            if (player)
+            {
                 player.GetComponent<polygon_fps_controller>()._3rd = true;
                 player.GetComponent<polygon_fps_controller>().head_3rd_status();
             }
@@ -317,7 +319,7 @@ public class assault57 : MonoBehaviour
         float ver = Random.Range(-current_spread, current_spread);
 
 
-        
+
         Add_spread = new Vector3(hor, ver, 0);
 
 
@@ -327,7 +329,7 @@ public class assault57 : MonoBehaviour
         Power_bolt = 1;
 
 
-       
+
         bullet_drop();
 
 
@@ -339,7 +341,8 @@ public class assault57 : MonoBehaviour
         // full recoil
         if (!suppressor_a_bool && !suppressor_mac10_bool && !suppressor_c_bool && !suppressor_d_bool)
         {
-            if(player){
+            if (player)
+            {
                 player.GetComponent<polygon_fps_controller>().vertical_float_spread = -add_ver_force;
                 player.GetComponent<polygon_fps_controller>().horizontal_float_spread = add_hor_force;
             }
@@ -349,7 +352,8 @@ public class assault57 : MonoBehaviour
         //  Suppressor = 33% less recoil
         if (suppressor_a_bool || suppressor_mac10_bool || suppressor_c_bool || suppressor_d_bool)
         {
-            if(player){
+            if (player)
+            {
                 player.GetComponent<polygon_fps_controller>().vertical_float_spread = -add_ver_force / 3;
                 player.GetComponent<polygon_fps_controller>().horizontal_float_spread = add_hor_force / 3;
             }
@@ -387,7 +391,7 @@ public class assault57 : MonoBehaviour
 
         RaycastHit hit;
 
-        
+
 
         // shooting from the camera
         shoot_handle.GetComponent<shoot_handle>().register_shoot(Cam.transform.position, Cam.transform.TransformDirection(Vector3.forward - Add_spread), Joule);
@@ -399,7 +403,7 @@ public class assault57 : MonoBehaviour
         }
 
 
-       
+
         magazine_current -= 1;
 
 
@@ -443,7 +447,7 @@ public class assault57 : MonoBehaviour
     public IEnumerator reload_start()
     {
 
-        
+
         in_reload = true;
         finished_reload_in_reload = false;
 
@@ -472,7 +476,7 @@ public class assault57 : MonoBehaviour
             g.transform.parent = Shoot_start_point.transform;
         }
 
-      
+
         yield return new WaitForSeconds(reload_time);
 
 
@@ -499,7 +503,7 @@ public class assault57 : MonoBehaviour
         finished_shoot = true;
         in_reload = false;
 
-       
+
         StopCoroutine(reload_start());
 
     }
@@ -510,7 +514,7 @@ public class assault57 : MonoBehaviour
     public Animator ani;
 
 
-   
+
     public Vector3 idle_cam;
     public Vector3 aim_cam;
     public Vector3 run_cam;
@@ -688,9 +692,9 @@ public class assault57 : MonoBehaviour
     public void change_equipment()
     {
 
-        
 
-        
+
+
         scope = false;
 
 

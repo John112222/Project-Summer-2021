@@ -2158,6 +2158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   axe_hit_sound: {fileID: 8300000, guid: 60a5d21ee18b20449b6858c5f81adc8e, type: 3}
   player: {fileID: 0}
+  isRegularPlayer: 0
   _3rd_view: 0
   _3rd_view_cam: {x: 0.00457, y: 0.00899, z: 0.0062}
   button_shoot: 0
@@ -11640,6 +11641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recyle_particles_performance: {fileID: 0}
   shoot_handle: {fileID: 2285816338108177033}
+  isRegularPlayer: 0
   player: {fileID: 0}
   _3rd_view: 0
   _3rd_view_cam: {x: 0.00457, y: 0.00899, z: 0.0062}
@@ -26697,6 +26699,7 @@ MonoBehaviour:
   player: {fileID: 0}
   _3rd_view: 0
   _3rd_view_cam: {x: 0.00457, y: 0.00899, z: 0.0062}
+  isRegularPlayer: 0
   Shoot_start_point: {fileID: 798197633155708129}
   muzzle: {fileID: 608599103072718906, guid: 4547f8ff15bb82947b85f8c98dee9fd0, type: 3}
   full_auto: 0

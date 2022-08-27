@@ -7,6 +7,7 @@ public class AIFallback : MonoBehaviour
 {
     [SerializeField] NavMeshAgent agent;
     [SerializeField] AIfieldofview fov;
+    [SerializeField] TestAIBehavior normalBehvaior;
     private Vector3 originaldestination;
     private bool isfallingback = false;
     private int myviewid = -1;
@@ -22,10 +23,11 @@ public class AIFallback : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isfallingback && agent.isStopped)
+        if (isfallingback && !EnemyNearby())
         {
             isfallingback = false;
             agent.SetDestination(originaldestination);
+            normalBehvaior.enabled = true;
         }
         if (!isfallingback)
         {
@@ -39,12 +41,29 @@ public class AIFallback : MonoBehaviour
                     {
                         RullFallback(targets.target);
                         Debug.LogWarning("running away");
-                        break;
                     }
                 }
             }
         }
     }
+
+    private bool EnemyNearby()
+    {
+        foreach (var targets in fov.Targetlist)
+        {
+            if (targets.target.CompareTag("Player") && targets.isvisible && targets.target.GetComponent<PhotonView>() is PhotonView pv)
+            {
+                int Otherviewid = pv.ViewID;
+                if (!GameManager.isonsameteam(myviewid, Otherviewid))
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+
     public void RullFallback(GameObject obstacleobject)
     {
         if (!obstacleobject.CompareTag("Player")) return;
@@ -52,5 +71,6 @@ public class AIFallback : MonoBehaviour
         var fallbackposition = agent.transform.position - obstacleobject.transform.position;
         agent.SetDestination(5 * fallbackposition);
         isfallingback = true;
+        normalBehvaior.enabled = false;
     }
 }

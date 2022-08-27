@@ -10,28 +10,32 @@ public class NetworkedShooting : MonoBehaviourPun
     public KeyCode shootKey = KeyCode.Mouse0;
     public bool canFire = false;
 
-    private void Start() {
-        if(playerCamera == null)
+    private void Start()
+    {
+        if (playerCamera == null)
         {
             playerCamera = Camera.main;
         }
     }
 
-    private void Update() {
+    private void Update()
+    {
         //if(photonView.IsMine && canFire && Input.GetKeyDown(shootKey))
         //{
-          //  Shoot();
+        //  Shoot();
         //}
     }
 
-    public void Shoot(RaycastHit RCHit, int dmg=0)
+    public void Shoot(RaycastHit RCHit, int dmg = 0)
     {
         Debug.Log($"We {this.gameObject} hit {RCHit.collider.gameObject.name}");
-        if(!photonView.IsMine || playerCamera == null) return;
+        if (!photonView.IsMine || playerCamera == null) return;
 
 
-    
-            
-            RCHit.collider.GetComponent<NetworkedHealth>()?.TakeDamage(dmg==0?damage:dmg);
+
+        if (RCHit.collider.gameObject != this.gameObject)
+        {
+            RCHit.collider.GetComponent<NetworkedHealth>()?.TakeDamage(dmg == 0 ? damage : dmg);
+        }
     }
 }

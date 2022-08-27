@@ -427,6 +427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 3079289242479891187}
   fov: {fileID: 2119781069574109386}
+  normalBehvaior: {fileID: 3079289242479891196}
 --- !u!81 &8006196570589991583
 AudioListener:
   m_ObjectHideFlags: 0
@@ -566,19 +567,7 @@ MonoBehaviour:
   targetlist: []
   OnTargetEnter:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -7056906846826240339}
-        m_TargetAssemblyTypeName: AIFallback, Assembly-CSharp
-        m_MethodName: RullFallback
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnTargetExit:
     m_PersistentCalls:
       m_Calls:
@@ -866,6 +855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recyle_particles_performance: {fileID: 0}
   shoot_handle: {fileID: 8025040966288528340}
+  isRegularPlayer: 0
   player: {fileID: 0}
   _3rd_view: 0
   _3rd_view_cam: {x: 0.00457, y: 0.00899, z: 0.0062}
@@ -11615,6 +11605,7 @@ MonoBehaviour:
   player: {fileID: 0}
   _3rd_view: 0
   _3rd_view_cam: {x: 0.00457, y: 0.00899, z: 0.0062}
+  isRegularPlayer: 0
   Shoot_start_point: {fileID: 5902876988311364498}
   muzzle: {fileID: 608599103072718906, guid: 4547f8ff15bb82947b85f8c98dee9fd0, type: 3}
   full_auto: 0
@@ -17675,6 +17666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   axe_hit_sound: {fileID: 8300000, guid: 60a5d21ee18b20449b6858c5f81adc8e, type: 3}
   player: {fileID: 0}
+  isRegularPlayer: 0
   _3rd_view: 0
   _3rd_view_cam: {x: 0.00457, y: 0.00899, z: 0.0062}
   button_shoot: 0

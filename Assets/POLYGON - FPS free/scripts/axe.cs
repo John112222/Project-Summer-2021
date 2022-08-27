@@ -1,7 +1,8 @@
 ﻿using System.Collections;
+using Photon.Pun;
 using UnityEngine;
 
-public class axe : MonoBehaviour
+public class axe : MonoBehaviourPun
 {
 
 
@@ -10,11 +11,13 @@ public class axe : MonoBehaviour
     {
         _3rd_view = player.GetComponent<polygon_fps_controller>()._3rd;
     }
-    
+
 
     public AudioClip axe_hit_sound;
 
     public GameObject player;
+    public bool isRegularPlayer = false;
+
 
     bool running;
     bool walking;
@@ -97,6 +100,7 @@ public class axe : MonoBehaviour
 
     public void Input_Status()
     {
+        if (!isRegularPlayer) return;
         if (Input.GetButton("Fire1"))
         {
             button_shoot = true;
